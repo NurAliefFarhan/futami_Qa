@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('futamis', function (Blueprint $table) {
             $table->id();
-            $table->string('nodokumen')->unique();
+            $table->string('nodokumen');
             $table->string('pemberi_sampel');
             $table->string('parameter_pengujian');
             $table->string('jumlah_sampel');

@@ -68,7 +68,8 @@ class OperatorController extends Controller
      public function inputData(Request $request)
      {
          $request->validate([
-             'nodokumen' => 'required|min:5|unique:futamis,nodokumen',
+            //  'nodokumen' => 'required|min:5|unique:futamis,nodokumen',
+             'nodokumen' => 'required|min:5',
              'pemberi_sampel' => 'required',
              'parameter_pengujian' => 'required|min:5',
              'jumlah_sampel' => 'required',
@@ -183,13 +184,18 @@ class OperatorController extends Controller
         } 
        
         $get_last_no_dokumen = Futami::latest()->first();
-        if(is_null ($get_last_no_dokumen) ){
-            $get_last_no_dokumen = 0;
-        }else{
-            // $get_last_no_dokumen->nodokumen;
-            $get_last_no_dokumen = Futami::latest()->first()->nodokumen;
-        }
+        // if(is_null ($get_last_no_dokumen) ){
+        //     $get_last_no_dokumen = 0;
+        // }else{
+        //     // $get_last_no_dokumen->nodokumen;
+        //     $get_last_no_dokumen = Futami::latest()->first()->nodokumen;
+        // }
 
+        if(is_null($get_last_no_dokumen) || $get_last_no_dokumen->created_at->format('y') !== $get_tahun) {
+            $get_last_no_dokumen = 0;
+        } else {
+            $get_last_no_dokumen = $get_last_no_dokumen->nodokumen;
+        }
         
 
         $nodokumen_get_num = explode("/", $get_last_no_dokumen)[0]+1; //membagi angka dengan axplode    
