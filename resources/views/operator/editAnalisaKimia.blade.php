@@ -103,22 +103,36 @@
 
                                         <div class="card-body">
                                             <div class="form-row">
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-md-4">
                                                     <label for="inputEmail4">No.Dokumen</label>
                                                     <input type="text" name="nodokumen" value="{{$futamis['nodokumen']}}" class="form-control" id="inputEmail4" placeholder="Masukkan No.Dokumen (4/LAK/V1/21)" disabled>
                                                 </div>
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-md-4">
                                                     <label for="inputEmail4">Pemberi sampel</label>
                                                     <input type="string" name="pemberi_sampel" value="{{$futamis['pemberi_sampel']}}"  class="form-control" id="inputEmail4" placeholder="Masukkan nama pemberi sampel">
                                                 </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="inputEmail4">Parameter Pengujian</label>
-                                                    <input type="string" name="parameter_pengujian" value="{{$futamis['parameter_pengujian']}}"  class="form-control" id="inputEmail4" placeholder="Masukkan parameter pengujian">
-                                                </div>
-                                                <div class="form-group col-md-6">
+                                                <div class="form-group col-md-4">
                                                     <label for="inputEmail4">Jumlah sampel</label>
                                                     <input type="number" name="jumlah_sampel" value="{{$futamis['jumlah_sampel']}}"  class="form-control" id="inputEmail4" placeholder="Masukkan jumlah sampel">
                                                 </div>
+
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputEmail4">Parameter Pengujian C1</label>
+                                                    <input type="string" name="parameter_pengujian" value="{{$futamis['parameter_pengujian']}}"  class="form-control" id="inputEmail4" placeholder="Parameter pengujian C1 (optional)">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputEmail4">Parameter Pengujian C2</label>
+                                                    <input type="string" name="parameter_pengujian_c2" value="{{$futamis['parameter_pengujian_c2']}}"  class="form-control" id="inputEmail4" placeholder="Parameter pengujian C2 (optional)">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputEmail4">Parameter Pengujian C3</label>
+                                                    <input type="string" name="parameter_pengujian_c3" value="{{$futamis['parameter_pengujian_c3']}}"  class="form-control" id="inputEmail4" placeholder="Parameter pengujian C3 (optional)">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="inputEmail4">Parameter Pengujian C4</label>
+                                                    <input type="string" name="parameter_pengujian_c4" value="{{$futamis['parameter_pengujian_c4']}}"  class="form-control" id="inputEmail4" placeholder="Parameter pengujian C4 (optional)">
+                                                </div>
+                                                
 
                                                 <div class="form-group col-md-4">
                                                     <label for="inputEmail4">Tanggal terima sampel</label>
@@ -154,7 +168,7 @@
                                     <span class="d-none" style="display: none; ">{{ $i=0 }}</span> 
 
                                     @foreach ($futami_sampel_kimia as $sampel_kimia)
-                                        {{ $i++ }} 
+                                        <span class="d-none">{{ $i++ }} </span>
                                         
                                         <div class="card-body">
                                             <div class="form-row" style="margin-top:-3%;">
@@ -162,16 +176,16 @@
                                                     <label for="inputEmail4">Sampel</label>
                                                 </div> 
                                                 <div class="form-group col-md-1" align="center">
-                                                    <label for="inputEmail4">C1</label>
+                                                    <label for="inputEmail4">{{$futamis['parameter_pengujian']}}</label>
                                                 </div>
                                                 <div class="form-group col-md-1" align="center">
-                                                    <label for="inputEmail4">C2</label>
+                                                    <label for="inputEmail4">{{$futamis['parameter_pengujian_c2']}}</label>
                                                 </div>
                                                 <div class="form-group col-md-1" align="center">
-                                                    <label for="inputEmail4">C3</label>
+                                                    <label for="inputEmail4">{{$futamis['parameter_pengujian_c3']}}</label>
                                                 </div>
                                                 <div class="form-group col-md-1" align="center">
-                                                    <label for="inputEmail4">C4</label>
+                                                    <label for="inputEmail4">{{$futamis['parameter_pengujian_c4']}}</label>
                                                 </div>
                                                 <div class="form-group col-md-2" align="center"> 
                                                     <label for="inputEmail4">Spesifikasi</label>
@@ -185,16 +199,16 @@
                                                     <input type="text" name="inputSampel[{{ $i }}][sampel]" value="{{$sampel_kimia['sampel']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
                                                 </div> 
                                                 <div class="form-group col-md-1">
-                                                    <input type="text" name="inputSampel[{{ $i }}][parameter_nilaiuji]" value="{{$sampel_kimia['parameter_nilaiuji']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama parameter dan nilai uji C1">
+                                                    <input type="text" name="inputSampel[{{ $i }}][parameter_nilaiuji]" value="{{$sampel_kimia['parameter_nilaiuji']}}" class="form-control" id="inputEmail4" placeholder="Parameter dan nilai uji C1 (optional)">
                                                 </div>
                                                 <div class="form-group col-md-1">
-                                                    <input type="text" name="inputSampel[{{ $i }}][parameter_nilaiuji_c2]" value="{{$sampel_kimia['parameter_nilaiuji_c2']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama parameter dan nilai uji C2">
+                                                    <input type="text" name="inputSampel[{{ $i }}][parameter_nilaiuji_c2]" value="{{$sampel_kimia['parameter_nilaiuji_c2']}}" class="form-control" id="inputEmail4" placeholder="Parameter dan nilai uji C2 (optional)">
                                                 </div>
                                                 <div class="form-group col-md-1">
-                                                    <input type="text" name="inputSampel[{{ $i }}][parameter_nilaiuji_c3]" value="{{$sampel_kimia['parameter_nilaiuji_c3']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama parameter dan nilai uji C3">
+                                                    <input type="text" name="inputSampel[{{ $i }}][parameter_nilaiuji_c3]" value="{{$sampel_kimia['parameter_nilaiuji_c3']}}" class="form-control" id="inputEmail4" placeholder="Parameter dan nilai uji C3 (optional)">
                                                 </div>
                                                 <div class="form-group col-md-1">
-                                                    <input type="text" name="inputSampel[{{ $i }}][parameter_nilaiuji_c4]" value="{{$sampel_kimia['parameter_nilaiuji_c4']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama parameter dan nilai uji C4">
+                                                    <input type="text" name="inputSampel[{{ $i }}][parameter_nilaiuji_c4]" value="{{$sampel_kimia['parameter_nilaiuji_c4']}}" class="form-control" id="inputEmail4" placeholder="Parameter dan nilai uji C4 (optional)">
                                                 </div>
                                                 <div class="form-group col-md-2"> 
                                                     <textarea type="text" name="inputSampel[{{ $i }}][spesifikasi]" value="{{ $sampel_kimia['spesifikasi'] }}" class="form-control" id="inputEmail4" placeholder="Masukkan spesifikasi">{{ $sampel_kimia['spesifikasi'] }}</textarea>
@@ -258,7 +272,7 @@
 
 
 
-        <div class="main-content">
+        <div class="main-content" style="margin-top:-6%;">
             <section class="section">
                 <form action="{{route('sampel_analisa_kimia.post', $futamis['id'])}}" method="POST">
                     @csrf
@@ -282,16 +296,16 @@
                                                             <label for="inputEmail4">Sampel</label>
                                                         </div> 
                                                         <div class="form-group col-md-1" align="center">
-                                                            <label for="inputEmail4">C1</label>
+                                                            <label for="inputEmail4">{{$futamis['parameter_pengujian']}}</label>
                                                         </div>
                                                         <div class="form-group col-md-1" align="center">
-                                                            <label for="inputEmail4">C2</label>
+                                                            <label for="inputEmail4">{{$futamis['parameter_pengujian_c2']}}</label>
                                                         </div>
                                                         <div class="form-group col-md-1" align="center">
-                                                            <label for="inputEmail4">C3</label>
+                                                            <label for="inputEmail4">{{$futamis['parameter_pengujian_c3']}}</label>
                                                         </div>
                                                         <div class="form-group col-md-1" align="center">
-                                                            <label for="inputEmail4">C4</label>
+                                                            <label for="inputEmail4">{{$futamis['parameter_pengujian_c4']}}</label>
                                                         </div>
                                                         <div class="form-group col-md-2" align="center"> 
                                                             <label for="inputEmail4">Spesifikasi</label>

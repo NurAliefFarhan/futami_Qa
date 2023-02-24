@@ -17,7 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('nodokumen');
             $table->string('pemberi_sampel');
-            $table->string('parameter_pengujian');
+            $table->string('parameter_pengujian')->nullable();
+            $table->string('parameter_pengujian_c2')->nullable();
+            $table->string('parameter_pengujian_c3')->nullable();
+            $table->string('parameter_pengujian_c4')->nullable();
             $table->string('jumlah_sampel');
             $table->date('tanggal_terima');
             $table->date('tanggal_uji');

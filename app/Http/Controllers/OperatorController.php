@@ -135,7 +135,7 @@ class OperatorController extends Controller
         $request->validate([
             // 'nodokumen' => 'required|min:5|unique:futamis,nodokumen',
             'pemberi_sampel' => 'required',
-            'parameter_pengujian' => 'required|min:3', 
+            // 'parameter_pengujian' => 'required|min:3', 
             'jumlah_sampel' => 'required',
             'tanggal_terima' => 'required',
             'tanggal_uji' => 'required',
@@ -144,7 +144,7 @@ class OperatorController extends Controller
            'nodokumen.unique' => 'no dokumen ini telah ada!',
            'nodokumen.required' => 'no dokumen ini harus di isi!',
            'pemberi_sampel.required' => 'Kolom pemberi_sampel harus di isi',
-           'parameter_pengujian.required' => 'Kolom parameter_pengujian harus di isi',
+        //    'parameter_pengujian.required' => 'Kolom parameter_pengujian harus di isi',
            'jumlah_sampel.required' => 'Kolom jumlah_sampel harus di isi',
            'tanggal_terima.required' => 'Kolom tanggal_terima harus di isi',
            'tanggal_uji.required' => 'Kolom tanggal_uji harus di isi',
@@ -211,12 +211,20 @@ class OperatorController extends Controller
         //setelah dapat nomor dokumen parsing hanya nomor saja
         //setelah dapat nomornya saja + 1 
         //setelah dapat semua formatnya gabung jadi 1 variable nodokumen
+        
+       
         $validasiCreate = Futami::create([
             'nodokumen' => $nodokumen,
 
             // 'nodokumen' => $request->nodokumen,
             'pemberi_sampel' => $request->pemberi_sampel,
+            // 'parameter_pengujian' => $request->parameter_pengujian,
             'parameter_pengujian' => $request->parameter_pengujian,
+            'parameter_pengujian_c2' => $request->parameter_pengujian_c2,
+            'parameter_pengujian_c3' => $request->parameter_pengujian_c3,
+            'parameter_pengujian_c4' => $request->parameter_pengujian_c4,
+
+
             'jumlah_sampel' => $request->jumlah_sampel,
             'tanggal_terima' => $request->tanggal_terima,
             'tanggal_uji' => $request->tanggal_uji,
@@ -234,7 +242,10 @@ class OperatorController extends Controller
 
     public function sampel_analisa_kimia(Request $request, $id)
     {
-        return view('operator.sampelAnalisaKimia', compact('id'));
+        $futamis = Futami::Where('id', $id)->first();
+        // $futami_sampel_kimia = Futami_sampel_kimia::where('id_analisa_kimia', '=', $id)->get(); 
+ 
+        return view('operator.sampelAnalisaKimia', compact('id', 'futamis'));
     }
 
 
@@ -270,10 +281,10 @@ class OperatorController extends Controller
             'inputSampel' => 'required|array|min:1',
 
             'inputSampel.*.sampel' => 'required',
-            'inputSampel.*.parameter_nilaiuji' => 'required',
-            'inputSampel.*.parameter_nilaiuji_c2' => 'required',
-            'inputSampel.*.parameter_nilaiuji_c3' => 'required',
-            'inputSampel.*.parameter_nilaiuji_c4' => 'required',
+            // 'inputSampel.*.parameter_nilaiuji' => 'required',
+            // 'inputSampel.*.parameter_nilaiuji_c2' => 'required',
+            // 'inputSampel.*.parameter_nilaiuji_c3' => 'required',
+            // 'inputSampel.*.parameter_nilaiuji_c4' => 'required',
             'inputSampel.*.spesifikasi' => 'required|min:5',
             'inputSampel.*.keterangan' => 'required|min:5',
         ],[
@@ -282,10 +293,10 @@ class OperatorController extends Controller
             'inputSampel.min' => 'Minimal satu sampel harus diisi',
 
             'inputSampel.*.sampel.required' => 'Kolom sampel harus di isi',
-            'inputSampel.*.parameter_nilaiuji.required' => 'Kolom parameter_nilaiuji harus di isi',
-            'inputSampel.*.parameter_nilaiuji_c2.required' => 'Kolom parameter_nilaiuji C2 harus di isi',
-            'inputSampel.*.parameter_nilaiuji_c3.required' => 'Kolom parameter_nilaiuji C3 harus di isi',
-            'inputSampel.*.parameter_nilaiuji_c4.required' => 'Kolom parameter_nilaiuji C4 harus di isi',
+            // 'inputSampel.*.parameter_nilaiuji.required' => 'Kolom parameter_nilaiuji harus di isi',
+            // 'inputSampel.*.parameter_nilaiuji_c2.required' => 'Kolom parameter_nilaiuji C2 harus di isi',
+            // 'inputSampel.*.parameter_nilaiuji_c3.required' => 'Kolom parameter_nilaiuji C3 harus di isi',
+            // 'inputSampel.*.parameter_nilaiuji_c4.required' => 'Kolom parameter_nilaiuji C4 harus di isi',
             
             'inputSampel.*.spesifikasi.required' => 'Kolom spesifikasi harus di isi',
             'inputSampel.*.spesifikasi.min' => 'Kolom spesifikasi harus memiliki panjang minimal 5 karakter',
@@ -305,7 +316,7 @@ class OperatorController extends Controller
                 'id_analisa_kimia' => $id, 
             ]);
         }
-    
+
         return redirect('/operator/data')->with('successAddSampel', 'Berhasil membuat Data Sampel Baru!');
     }
     
@@ -322,7 +333,7 @@ class OperatorController extends Controller
         $request->validate([
             // 'nodokumen' => 'required|min:5',
             'pemberi_sampel' => 'required',
-            'parameter_pengujian' => 'required|min:5',
+            // 'parameter_pengujian' => 'required|min:5',
             'jumlah_sampel' => 'required',
             'tanggal_terima' => 'required',
             'tanggal_uji' => 'required',
@@ -330,16 +341,19 @@ class OperatorController extends Controller
         ],[
             // 'nodokumen.required' => 'no dokumen ini harus di isi!',
             'pemberi_sampel.required' => 'Kolom pemberi_sampel harus di isi',
-            'parameter_pengujian.required' => 'Kolom parameter_pengujian harus di isi',
+            // 'parameter_pengujian.required' => 'Kolom parameter_pengujian harus di isi',
             'jumlah_sampel.required' => 'Kolom jumlah_sampel harus di isi',
             'tanggal_terima.required' => 'Kolom tanggal_terima harus di isi',
             'tanggal_uji.required' => 'Kolom tanggal_uji harus di isi',
             'tanggal_selesai.required' => 'Kolom tanggal_selesai harus di isi',
         ]);
         $validasiData = Futami::where('id', $id)->update([
-            'nodokumen' => $request->nodokumen,
+            // 'nodokumen' => $request->nodokumen,
             'pemberi_sampel' => $request->pemberi_sampel,
             'parameter_pengujian' => $request->parameter_pengujian,
+            'parameter_pengujian_c2' => $request->parameter_pengujian_c2,
+            'parameter_pengujian_c3' => $request->parameter_pengujian_c3,
+            'parameter_pengujian_c4' => $request->parameter_pengujian_c4,
             'jumlah_sampel' => $request->jumlah_sampel,
             'tanggal_terima' => $request->tanggal_terima,
             'tanggal_uji' => $request->tanggal_uji,
@@ -349,18 +363,18 @@ class OperatorController extends Controller
         //Validasi edit sampel kimia 
         $validasiSampel = $request->validate([
             'inputSampel.*.sampel' => 'required',
-            'inputSampel.*.parameter_nilaiuji' => 'required',
-            'inputSampel.*.parameter_nilaiuji_c2' => 'required',
-            'inputSampel.*.parameter_nilaiuji_c3' => 'required',
-            'inputSampel.*.parameter_nilaiuji_c4' => 'required',
+            // 'inputSampel.*.parameter_nilaiuji' => 'required',
+            // 'inputSampel.*.parameter_nilaiuji_c2' => 'required',
+            // 'inputSampel.*.parameter_nilaiuji_c3' => 'required',
+            // 'inputSampel.*.parameter_nilaiuji_c4' => 'required',
             'inputSampel.*.spesifikasi' => 'required|min:5',
             'inputSampel.*.keterangan' => 'required|min:5',
         ],[
             'inputSampel.*.sampel.required' => 'Kolom sampel harus di isi',
-            'inputSampel.*.parameter_nilaiuji.required' => 'Kolom parameter_nilaiuji harus di isi',
-            'inputSampel.*.parameter_nilaiuji_c2.required' => 'Kolom parameter_nilaiuji harus di isi',
-            'inputSampel.*.parameter_nilaiuji_c3.required' => 'Kolom parameter_nilaiuji harus di isi',
-            'inputSampel.*.parameter_nilaiuji_c4.required' => 'Kolom parameter_nilaiuji harus di isi',
+            // 'inputSampel.*.parameter_nilaiuji.required' => 'Kolom parameter_nilaiuji harus di isi',
+            // 'inputSampel.*.parameter_nilaiuji_c2.required' => 'Kolom parameter_nilaiuji harus di isi',
+            // 'inputSampel.*.parameter_nilaiuji_c3.required' => 'Kolom parameter_nilaiuji harus di isi',
+            // 'inputSampel.*.parameter_nilaiuji_c4.required' => 'Kolom parameter_nilaiuji harus di isi',
             'inputSampel.*.spesifikasi.required' => 'Kolom spesifikasi harus di isi',
             'inputSampel.*.keterangan.required' => 'Kolom keterangan harus di isi',
         ]);

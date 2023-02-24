@@ -194,10 +194,10 @@
                                                     
                                                     <th scope="col">No</th>
                                                     <th scope="col">Sampel</th>
-                                                    <th scope="col">Parameter dan Nilai Uji_C1</th>
-                                                    <th scope="col">Parameter dan Nilai Uji_C2</th>
-                                                    <th scope="col">Parameter dan Nilai Uji_C3</th>
-                                                    <th scope="col">Parameter dan Nilai Uji_C4</th>
+                                                    <th scope="col">{{$futamis['parameter_pengujian']}}</th>
+                                                    <th scope="col">{{$futamis['parameter_pengujian_c2']}}</th>
+                                                    <th scope="col">{{$futamis['parameter_pengujian_c3']}}</th>
+                                                    <th scope="col">{{$futamis['parameter_pengujian_c4']}}</th>
                                                     <th scope="col">Spesifikasi</th>
                                                     <th scope="col">Keterangan</th>
                                                     <th scope="col">Action</th>

@@ -102,7 +102,7 @@ Route::middleware('isLogin', 'cekRole:superadmin')->group(function () {
     Route::get('/admin/adduser/edit/{id}', [SuperadminController::class, 'userEdit'])->name('user.edit'); //untuk mengedit-> {id} untuk mengedit id yang dipilih
     Route::patch('/admin/adduser/update/{id}', [SuperadminController::class, 'userUpdate'])->name('user.update');
     Route::get('/admin/info', [SuperadminController::class, 'info'])->name('info');
-    Route::get('/admin/analisakimia/pdf/{id}', [SuperadminController::class, 'analisakimiapdf'])->name('analisakimiapdf');
+    Route::get('/admin/analisakimia/pdf/{id}', [SuperadminController::class, 'superadmin_analisakimiapdf'])->name('superadmin_analisakimiapdf');
     Route::get('/admin/analisakimia/history', [SuperadminController::class, 'history'])->name('history');
 
     // Route::get('/superadmin', [SuperadminController::class, 'superadmin'])->name('superadmin');

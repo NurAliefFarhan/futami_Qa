@@ -110,16 +110,16 @@
                                                 <label for="inputEmail4">Sampel</label>
                                             </div> 
                                             <div class="form-group col-md-1" align="center">
-                                                <label for="inputEmail4">C1</label>
+                                                <label for="inputEmail4">{{$futamis['parameter_pengujian']}}</label>
                                             </div>
                                             <div class="form-group col-md-1" align="center">
-                                                <label for="inputEmail4">C2</label>
+                                                <label for="inputEmail4">{{$futamis['parameter_pengujian_c2']}}</label>
                                             </div>
                                             <div class="form-group col-md-1" align="center">
-                                                <label for="inputEmail4">C3</label>
+                                                <label for="inputEmail4">{{$futamis['parameter_pengujian_c3']}}</label>
                                             </div>
                                             <div class="form-group col-md-1" align="center">
-                                                <label for="inputEmail4">C4</label>
+                                                <label for="inputEmail4">{{$futamis['parameter_pengujian_c4']}}</label>
                                             </div>
                                             <div class="form-group col-md-2" align="center"> 
                                                 <label for="inputEmail4">Spesifikasi</label>
@@ -250,7 +250,7 @@
             ++i;
             $('#sampel').append(`  
 
-            <div class="card-body removeSampel" id="removeSampel" style="margin-top: -1%; margin-left:-25px;">
+            <div class="card-body removeSampel" id="removeSampel" style="margin-top: -2%; margin-left:-25px;">
 
                 <div class="form-row" style="margin-top:2%;">
                     <div class="form-group col-md-3" style="width:216px;">

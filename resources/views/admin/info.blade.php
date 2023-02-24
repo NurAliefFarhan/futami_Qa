@@ -1011,7 +1011,7 @@
                                               @endif
                                             </td>
                                             <td>
-                                                <a class="fa-solid fa-file-pdf ml-1 btn" target="_blank" href="{{route('analisakimiapdf', $futami->id)}}"></a>
+                                                <a class="fa-solid fa-file-pdf ml-1 btn" target="_blank" href="{{route('superadmin_analisakimiapdf', $futami->id)}}"></a>
                                             </td>
                                         </tr>
                                             @empty

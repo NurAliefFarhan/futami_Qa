@@ -160,10 +160,10 @@
                       <td rowspan="2" align="center">Keterangan</td>
                     </tr>
                     <tr style="border-left-style: hidden; border-right-style:hidden;">
-                        <td colspan="" align="center">C1</td>
-                        <td colspan="" align="center">C2</td>
-                        <td colspan="" align="center">C3</td>
-                        <td colspan="" align="center">C4</td>
+                        <td colspan="" align="center">{{$futami['parameter_pengujian']}}</td>
+                        <td colspan="" align="center">{{$futami['parameter_pengujian_c2']}}</td>
+                        <td colspan="" align="center">{{$futami['parameter_pengujian_c3']}}</td>
+                        <td colspan="" align="center">{{$futami['parameter_pengujian_c4']}}</td>
                     </tr>
                     @foreach($futami_sampel_kimia as $sampel)
                         <tr style="border-left-style: hidden; border-right-style:hidden;">

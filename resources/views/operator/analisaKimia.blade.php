@@ -98,19 +98,33 @@
                                                 <label for="inputEmail4">No.Dokumen</label>
                                                 <input type="text" name="nodokumen" class="form-control" id="inputEmail4" placeholder="Masukkan No.Dokumen (4/LAK/V1/21)">
                                             </div> --}}
-                                            <div class="form-group col-md-4">
+                                            <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Pemberi sampel</label>
                                                 <input type="string" name="pemberi_sampel" class="form-control" id="inputEmail4" placeholder="Masukkan nama pemberi sampel">
                                             </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="inputEmail4">Parameter Pengujian</label>
-                                                <input type="string" name="parameter_pengujian" class="form-control" id="inputEmail4" placeholder="Masukkan parameter pengujian">
-                                            </div>
-                                            
-                                            <div class="form-group col-md-4">
+                                            <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Jumlah sampel</label>
                                                 <input type="number" name="jumlah_sampel" class="form-control" id="inputEmail4" placeholder="Masukkan jumlah sampel">
                                             </div>
+
+                                            <div class="form-group col-md-3">
+                                                <label for="inputEmail4">Parameter Pengujian C1</label>
+                                                <input type="string" name="parameter_pengujian" class="form-control" id="inputEmail4" placeholder="Parameter pengujian C1 (optional)">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="inputEmail4">Parameter Pengujian C2</label>
+                                                <input type="string" name="parameter_pengujian_c2" class="form-control" id="inputEmail4" placeholder="Parameter pengujian C2 (optional)">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="inputEmail4">Parameter Pengujian C3</label>
+                                                <input type="string" name="parameter_pengujian_c3" class="form-control" id="inputEmail4" placeholder="Parameter pengujian C3 (optional)">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="inputEmail4">Parameter Pengujian C4</label>
+                                                <input type="string" name="parameter_pengujian_c4" class="form-control" id="inputEmail4" placeholder="Parameter pengujian C4 (optional)">
+                                            </div>
+                                            
+                                           
                                             <div class="form-group col-md-4">
                                                 <label for="inputEmail4">Tanggal terima sampel</label>
                                                 <input type="date" name="tanggal_terima" class="form-control" id="inputEmail4" placeholder="Masukkan tanggal terima sampel">

@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('sampel');
             $table->string('id_analisa_kimia')->nullable();
-            $table->string('parameter_nilaiuji');
-            $table->string('parameter_nilaiuji_c2');
-            $table->string('parameter_nilaiuji_c3');
-            $table->string('parameter_nilaiuji_c4');
+            $table->string('parameter_nilaiuji')->nullable();
+            $table->string('parameter_nilaiuji_c2')->nullable();
+            $table->string('parameter_nilaiuji_c3')->nullable();
+            $table->string('parameter_nilaiuji_c4')->nullable();
             $table->string('spesifikasi');
             $table->string('keterangan'); 
             $table->timestamps();
