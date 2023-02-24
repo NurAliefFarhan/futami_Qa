@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User; 
+use App\Models\Futami_sampel_kimia; 
 
 
 class UserSeeder extends Seeder
@@ -16,6 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $sampel = new Futami_sampel_kimia();
         $user = new User(); 
 
         User::create([

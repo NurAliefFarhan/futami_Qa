@@ -17,6 +17,8 @@
                   <button class="btn" type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </form>
+            <a class="text-success btn" href="/supervisor/data" style="margin-right:24%;"><i class="fa-solid fa-arrows-rotate fa-lg"></i></a>
+
             <ul class="navbar-nav navbar-right">
                 {{-- <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
                         class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
@@ -312,7 +314,7 @@
         <div class="main-content">
             <section class="section">
                 <div class="section-header">
-                    <h1>Data</h1>
+                    <h1>Data Analisa Kimia</h1>
                 </div>
 
                 <div class="section-body">

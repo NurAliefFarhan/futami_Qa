@@ -55,7 +55,7 @@ class OperatorController extends Controller
             $futamis->whereBetween('tanggal_uji', [$tanggal_uji, $tanggal_selesai]);
         }
 
-        $futamis = $futamis->orderBy('id', 'asc')->paginate(5)->onEachSide(5); //asc dari awal ke akhir 
+        $futamis = $futamis->orderBy('id', 'asc')->paginate(5)->onEachSide(5)->appends(request()->except('page')); //asc dari awal ke akhir 
         return view('operator.data', compact('futamis'))->with('no', ($futamis->currentPage() - 1) * $futamis->perPage() + 1); 
     }
  
@@ -465,7 +465,7 @@ class OperatorController extends Controller
         }
 
         // $futamis = $futamis->orderBy('id', 'desc')->paginate(5)->onEachSide(5); //desc ordeyBy untuk mengurutkan data dari paling ahir hingga ke paling awal 
-        $futamis = $futamis->orderBy('id', 'asc')->paginate(5)->onEachSide(5); ///asc untuk mengurutkan data dari paling awal hingga ke data data paling akhir
+        $futamis = $futamis->orderBy('id', 'asc')->paginate(5)->onEachSide(5)->appends(request()->except('page')); ///asc untuk mengurutkan data dari paling awal hingga ke data data paling akhir
         return view('operator.history', compact('futamis'))->with('no', ($futamis->currentPage() - 1) * $futamis->perPage() + 1);
     }
 

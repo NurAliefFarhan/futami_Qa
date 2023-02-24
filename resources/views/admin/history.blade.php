@@ -441,7 +441,7 @@
                                 </li>
                             </ul> --}}
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
@@ -469,7 +469,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         {{-- <li class="nav-header">EXAMPLES</li> --}}
                         {{-- <li class="nav-item">
                             <a href="pages/calendar.html" class="nav-link">
@@ -525,7 +525,7 @@
                                 </li>
                             </ul>
                         </li> --}}
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -595,7 +595,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         
                         <li class="nav-item" style="margin-top:70%;">
                             <a href="/logout" class="nav-link text-danger">
@@ -920,6 +920,8 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Data Analisa kimia</h3>
+                            <a href="/admin/info" class="btn btn-danger" style="width:20%; text-align:center; margin-left:78%; margin-top:-3%;">Back</a>
+
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -1014,7 +1016,6 @@
                                     @endforelse
                                 </tbody>                                
                             </table>
-                            <a href="/admin/info" class="btn btn-danger" style="width:20%; text-align:center; margin-left:78%; margin-top:3%;">Back</a>
                         </div>
                     <!-- /.card-body -->
                     </div>

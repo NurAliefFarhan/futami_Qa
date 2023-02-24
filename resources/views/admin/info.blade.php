@@ -441,7 +441,7 @@
                                 </li>
                             </ul> --}}
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
@@ -469,7 +469,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         {{-- <li class="nav-header">EXAMPLES</li> --}}
                         {{-- <li class="nav-item">
                             <a href="pages/calendar.html" class="nav-link">
@@ -525,7 +525,7 @@
                                 </li>
                             </ul>
                         </li> --}}
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -595,7 +595,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         
                         <li class="nav-item" style="margin-top:70%;">
                             <a href="/logout" class="nav-link text-danger">
@@ -919,8 +919,13 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Data Analisa kimia</h3>
-                            <a href="/admin/analisakimia/history" class="btn btn-primary" style="width:10%; text-align:center; margin-left:83%; margin-top:-3%;">History</a>
+                            {{-- <h3 class="card-title">Data Analisa kimia</h3> --}}
+                            {{-- <br> --}}
+
+                            {{-- <button type="button" class="btn btn-danger btn-block btn-sm"><i class="fa fa-bell"></i> Back</button> --}}
+                            <a href="/admin" class="btn btn-danger btn-sm" style="width:auto; text-align:center;"><i class="fa fa-house"></i> Back</a>
+                            
+                            <a href="/admin/analisakimia/history" class="btn btn-primary btn-sm" style="width:10%; text-align:center; float:right;">History</a>
 
                         </div>
                         <!-- /.card-header -->
@@ -1016,7 +1021,7 @@
                                     @endforelse
                                 </tbody>                                
                             </table>
-                            <a href="/admin" class="btn btn-danger" style="width:20%; text-align:center; margin-left:78%; margin-top:3%;">Back</a>
+                            {{-- <a href="/admin" class="btn btn-danger" style="width:20%; text-align:center; margin-left:78%; margin-top:3%;">Back</a> --}}
                         </div>
                     <!-- /.card-body -->
                     </div>

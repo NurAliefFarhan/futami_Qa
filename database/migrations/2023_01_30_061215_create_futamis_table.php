@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('jumlah_sampel');
             $table->date('tanggal_terima');
             $table->date('tanggal_uji');
-            $table->date('tanggal_selesai');
+            $table->date('tanggal_selesai'); 
             $table->string('statusOP');
             $table->string('statusST');
             $table->string('statusSP');

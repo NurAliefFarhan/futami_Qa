@@ -221,6 +221,8 @@
                                 Belum ditandatangani
                             @elseif($futami['statusST'] == 1)
                                 <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_ST .'_'. $futami->name_id_ST)) !!}" alt="">
+                            @elseif ($futami['statusST'] == 2)    
+                                Ditolak
                             @endif
                         </td>
                         <td style="border-right-style:hidden;" rowspan="2" align="center">
@@ -250,7 +252,9 @@
                         @endif
                       </td>
                       <td colspan="" align="center">
-                        @if($futami->name_id_ST == null)
+                        @if ($futami->statusST == 2)    
+                            Ditolak
+                        @elseif($futami->name_id_ST == null)
                             Belum dibaca
                         @elseif($futami->name_id_ST)
                             {{ $futami->name_id_ST }}
@@ -275,9 +279,11 @@
                         @endif
                       </td>
                       <td colspan="" align="center">
-                        @if ($futami->created_at_ST == null)
+                        @if ($futami->statusST == 2)
+                            Ditolak
+                        @elseif ($futami->created_at_ST == null)
                             Data kosong
-                        @else ()
+                        @elseif ($futami->statusST == 1)
                             {{Carbon\Carbon::parse($futami->created_at_ST)->translatedFormat('d F Y')}}
                         @endif
                       </td>

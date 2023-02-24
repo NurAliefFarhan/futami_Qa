@@ -41,7 +41,7 @@ class SupervisorController extends Controller
             $futamis->whereBetween('tanggal_uji', [$tanggal_uji, $tanggal_selesai]);
         }
 
-        $futamis = $futamis->orderBy('id', 'asc')->paginate(5)->onEachSide(5);
+        $futamis = $futamis->orderBy('id', 'asc')->paginate(5)->onEachSide(5)->appends(request()->except('page'));
         return view('supervisor.data', compact('futamis'))->with('no', ($futamis->currentPage() - 1) * $futamis->perPage() + 1);
     }
 
@@ -85,7 +85,7 @@ class SupervisorController extends Controller
             $futamis->whereBetween('tanggal_uji', [$tanggal_uji, $tanggal_selesai]);
         }
 
-        $futamis = $futamis->orderBy('id', 'desc')->paginate(5)->onEachSide(5);
+        $futamis = $futamis->orderBy('id', 'desc')->paginate(5)->onEachSide(5)->appends(request()->except('page'));
         return view('supervisor.history', compact('futamis'))->with('no', ($futamis->currentPage() - 1) * $futamis->perPage() + 1);
     }
 

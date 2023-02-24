@@ -68,9 +68,9 @@
             <hr class="my-4">
 
             <div class="text-center mb-2">
-              Tidak punya account?
-              <a href="/register" class="register-link">
-                Register here
+              {{-- Tidak punya account? --}}
+              <a href="/" class="register-link">
+                kembali
               </a>
             </div>
           </form>
