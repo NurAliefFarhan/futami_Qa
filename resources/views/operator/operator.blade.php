@@ -188,9 +188,9 @@
                     <li class="dropdown">
                         <a href="/operator/data" class="nav-link"><i class="fa-solid fa-flask"></i><span>Data Analisa Kimia</span></a>
                     </li>
-                    <li class="dropdown">
+                    {{-- <li class="dropdown">
                         <a href="/operator/analisakimia/history" class="nav-link"><i class="fas fa-history"></i><span>History Delete</span></a>
-                    </li>
+                    </li> --}}
 
                     {{-- <li class="dropdown" style="margin-top: 130%;">
                         <a href="/logout" class="nav-link text-danger"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>

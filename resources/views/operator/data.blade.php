@@ -187,9 +187,9 @@
                       <li class="dropdown active">
                           <a href="/operator/data" class="nav-link"><i class="fas fa-flask"></i><span>Data Analisa Kimia</span></a>
                       </li>
-                      <li class="dropdown">
+                      {{-- <li class="dropdown">
                         <a href="/operator/analisakimia/history" class="nav-link"><i class="fas fa-history"></i><span>History Delete</span></a>
-                      </li>
+                      </li> --}}
 
                       {{-- <li class="dropdown" style="margin-top: 130%;">
                           <a href="/logout" class="nav-link text-danger"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
@@ -355,14 +355,15 @@
 
 
 
-                                  <div class="button" style="margin-left:4%; margin-top:3%;">
+                                  <div class="button" style="margin-left:4%;">
                                       {{-- <button type="submit" name="submit" id="" class="btn btn-success">Tambah Data</button> --}}
                                       {{-- <a href="/operator/tambahdata" class="btn btn-success">Tambah Data</a> --}}
 
                                       {{-- button create multi form --}}
-                                      <a href="/operator/analisakimia" class="btn btn-success" style="margin-left: ;">Tambah Data</a>
-                                  
-                                  </div>
+                                      <a href="/operator/analisakimia" class="btn btn-success" style="margin-top: 20px;">Tambah Data</a>
+                                      
+                                      <a href="/operator/analisakimia/history" class="btn btn-danger" style="width:auto; text-align:center; float:right; margin:20px;"><i class="fa fa-history"></i> History Delete</a>
+                                    </div>
 
                                   {{-- <form action="{{route('operatorpdf')}}" method="POST" target="_blank">
                                     @csrf
@@ -380,7 +381,7 @@
                                   </form> --}}
 
       
-                                  <div class="card-body mt-3 shadow">
+                                  <div class="card-body mt-1 shadow">
                                       <div class="table-responsive">
                                           <table class="table table-bordered table-md">
                                               <tr>
