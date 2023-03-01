@@ -187,6 +187,10 @@
                       <li class="dropdown active">
                           <a href="/operator/data" class="nav-link"><i class="fas fa-flask"></i><span>Data Analisa Kimia</span></a>
                       </li>
+                      
+                      <li class="dropdown">
+                        <a href="/operator/mikrobiologi" class="nav-link"><i class="fas fa-bacterium"></i><span>Mikrobiologi Air</span></a>
+                      </li>
                       {{-- <li class="dropdown">
                         <a href="/operator/analisakimia/history" class="nav-link"><i class="fas fa-history"></i><span>History Delete</span></a>
                       </li> --}}
@@ -427,9 +431,9 @@
                                                           
                                                         @elseif($futami['statusOP'] == 1)
                                                           {{-- {!! QrCode::size(100)->generate(Request::url('alief')) !!} --}}
-                                                          <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($futami->user_id_OP .'_'. $futami->name_id_OP)) !!}" alt="">
+                                                          {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($futami->user_id_OP .'_'. $futami->name_id_OP)) !!}" alt=""> --}}
                                                           
-                                                          {{-- <br><br>{!! (QrCode::size(100)->generate($futami->user_id_OP ."_". $futami->name_id_OP)) !!}"  --}}
+                                                          {!! (QrCode::size(100)->generate($futami->user_id_OP ."_". $futami->name_id_OP)) !!}
 
                                                         @endif
 

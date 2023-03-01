@@ -219,13 +219,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            {{-- <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Tables
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
-                            </a>
+                            </a> --}}
                             {{-- <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="pages/tables/simple.html" class="nav-link">
@@ -247,7 +247,7 @@
                                 </li>
                             </ul> --}}
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -317,7 +317,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="nav-item" style="margin-top:70%;">
                             <a href="/logout" class="nav-link text-danger">
                                 <i class="fas fa-sign-out-alt"></i>

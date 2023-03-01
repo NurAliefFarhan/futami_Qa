@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Sampel_mikrobiologi_air;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User; 
@@ -17,6 +18,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $sampel = new Sampel_mikrobiologi_air();
         $sampel = new Futami_sampel_kimia();
         $user = new User(); 
 

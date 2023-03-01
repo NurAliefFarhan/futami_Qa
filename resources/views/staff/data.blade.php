@@ -191,6 +191,11 @@
                     <li class="dropdown active">
                         <a href="/staff/data" class="nav-link"><i class="fas fa-flask"></i><span>Data Analisa Kimia</span></a>
                     </li>
+
+                    {{-- Mikrobiologi Air --}}
+                    <li class="dropdown">
+                        <a href="/staff/mikrobiologi" class="nav-link"><i class="fas fa-bacterium"></i><span>Mikrobiologi Air</span></a>
+                    </li>
                     {{-- <li class="dropdown">
                         <a href="/staff/analisakimia/history" class="nav-link"><i class="fas fa-history"></i><span>History Delete</span></a>
                     </li> --}}
@@ -405,9 +410,9 @@
                                                             
                                                             @elseif($futami['statusOP'] == 1)
                                                             {{-- {{ $futami->user_id_OP }} _ {{ $futami->name_id_OP }} --}}
-                                                            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($futami->user_id_OP .'_'. $futami->name_id_OP)) !!}" alt="">
+                                                            {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($futami->user_id_OP .'_'. $futami->name_id_OP)) !!}" alt=""> --}}
 
-                                                            {{-- {!! QrCode::size(100)->generate($futami->user_id_OP ."_". $futami->name_id_OP) !!} --}}
+                                                            {!! QrCode::size(100)->generate($futami->user_id_OP ."_". $futami->name_id_OP) !!}
                                                         @endif
                                                     </td>
                                                     <td>
@@ -433,8 +438,8 @@
                                                         @elseif($futami['statusST'] == 1)
                                                         {{-- {{ $futami->user_id_ST }} _ {{ $futami->name_id_ST }} --}}
 
-                                                            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($futami->user_id_ST ."_". $futami->name_id_ST)) !!}" alt="">
-                                                            {{-- {!! QrCode::size(100)->generate($futami->user_id_ST ."_". $futami->name_id_ST) !!} --}}
+                                                            {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($futami->user_id_ST ."_". $futami->name_id_ST)) !!}" alt=""> --}}
+                                                            {!! QrCode::size(100)->generate($futami->user_id_ST ."_". $futami->name_id_ST) !!}
 
                                                         @elseif($futami['statusST'] == 2)
                                                             <div class="alert alert-danger">Data Ditolak</div>

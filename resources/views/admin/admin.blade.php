@@ -903,20 +903,20 @@
                             </div>
                         </div>
                         <!-- ./col -->
-                        {{-- <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                    <h3>{{$mikrobiologi_airs->where('delete', '=', 0)->count()}}</h3>
 
-                                    <p>Bounce Rate</p>
+                                    <p>Analisa Mikrobiologi Air</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
+                                    <i class="fa-solid fa-bacterium"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="/superadmin/mikrobiologi/info" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                        </div> --}}
+                        </div>
                         <!-- ./col -->
                         {{-- <div class="col-lg-3 col-6">
                             <!-- small box -->

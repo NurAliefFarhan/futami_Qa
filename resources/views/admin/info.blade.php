@@ -42,7 +42,9 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{asset('assets/template/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
+            {{-- <img class="animation__shake" src="{{asset('assets/template/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60"> --}}
+            <img class="animation__shake" src="{{asset('assets/img/futami bg.png')}}" alt="AdminLTELogo" height="120" width="120">
+
         </div>
 
         <!-- Navbar -->
@@ -964,7 +966,8 @@
                                                     Data Belum Ditandatangan
                                                 
                                                 @elseif($futami['statusOP'] == 1)
-                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_OP ."_". $futami->name_id_OP)) !!}" alt="">
+                                                    {!! QrCode::size(80)->generate($futami->user_id_OP ."_". $futami->name_id_OP) !!}
+                                                    {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_OP ."_". $futami->name_id_OP)) !!}" alt=""> --}}
                                                 @endif
                                             </td>
                                             <td>
@@ -987,8 +990,8 @@
 
 
                                                 @elseif($futami['statusST'] == 1)
-                                                    {{-- {!! QrCode::size(50)->generate($futami->nodokumen) !!} --}}
-                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_ST ."_". $futami->name_id_ST)) !!}" alt="">
+                                                {!! QrCode::size(80)->generate($futami->user_id_ST ."_". $futami->name_id_ST) !!}
+                                                {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_ST ."_". $futami->name_id_ST)) !!}" alt=""> --}}
 
                                                 @elseif($futami['statusST'] == 2)
                                                     <div class="alert alert-danger">Data Ditolak</div>
@@ -1005,8 +1008,8 @@
                                                 Data belum ditandatangan 
 
                                               @elseif($futami['statusSP'] == 1)
-                                                {{-- {!! QrCode::size(50)->generate($futami->nodokumen) !!} --}}
-                                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_SP ."_". $futami->name_id_SP)) !!}" alt="">
+                                                {!! QrCode::size(80)->generate($futami->user_id_SP ."_". $futami->name_id_SP) !!}
+                                              {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_SP ."_". $futami->name_id_SP)) !!}" alt=""> --}}
 
                                               @endif
                                             </td>

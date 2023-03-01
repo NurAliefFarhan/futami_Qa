@@ -191,6 +191,11 @@
                     <li class="dropdown active">
                         <a href="/supervisor/data" class="nav-link"><i class="fas fa-flask"></i><span>Data Analisa Kimia</span></a>
                     </li>
+
+                    {{-- Mikrobiologi Air --}}
+                    <li class="dropdown">
+                        <a href="/supervisor/mikrobiologi" class="nav-link"><i class="fas fa-bacterium"></i><span>Mikrobiologi Air</span></a>
+                    </li>
                     {{-- <li class="dropdown">
                         <a href="/supervisor/analisakimia/history" class="nav-link"><i class="fas fa-history"></i><span>History Delete</span></a>
                     </li> --}}
@@ -405,8 +410,8 @@
                                                             {{-- {{ $futami->user_id_OP }} _ {{ $futami->name_id_OP }}
                                                             <br> --}}
 
-                                                            {{-- {!! QrCode::size(100)->generate($futami->user_id_OP ."_". $futami->name_id_OP) !!} --}}
-                                                            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_OP ."_". $futami->name_id_OP)) !!}" alt="">
+                                                            {!! QrCode::size(80)->generate($futami->user_id_OP ."_". $futami->name_id_OP) !!}
+                                                            {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_OP ."_". $futami->name_id_OP)) !!}" alt=""> --}}
 
                                                         @endif
                                                     </td>
@@ -435,8 +440,8 @@
                                                             {{ Auth::user()->nama }} --}}
                                                             {{-- {{ $futami->user_id_OP }} _ {{ $futami->name_id_ST }}
                                                             <br> --}}
-                                                            {{-- {!! QrCode::size(80)->generate($futami->user_id_ST ."_". $futami->name_id_ST) !!} --}}
-                                                            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_ST ."_". $futami->name_id_ST)) !!}" alt="">
+                                                            {!! QrCode::size(80)->generate($futami->user_id_ST ."_". $futami->name_id_ST) !!}
+                                                            {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_ST ."_". $futami->name_id_ST)) !!}" alt=""> --}}
 
 
                                                         @elseif($futami['statusST'] == 2)
@@ -461,8 +466,8 @@
                                                         {{ Auth::user()->nama }} --}}
                                                         {{-- {{ $futami->user_id_SP }} _ {{ $futami->name_id_SP }}
                                                         <br> --}}
-                                                        {{-- {!! QrCode::size(80)->generate($futami->user_id_SP ."_". $futami->name_id_SP) !!} --}}
-                                                        <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_SP ."_". $futami->name_id_SP)) !!}" alt="">
+                                                        {{-- <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_SP ."_". $futami->name_id_SP)) !!}" alt=""> --}}
+                                                        {!! QrCode::size(80)->generate($futami->user_id_SP ."_". $futami->name_id_SP) !!}
 
                                                       @endif
                                                     </td>

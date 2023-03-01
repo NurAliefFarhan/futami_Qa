@@ -247,6 +247,11 @@
                     <li class="dropdown">
                         <a href="/supervisor/data" class="nav-link"><i class="fas fa-flask"></i><span>Data Analisa Kimia</span></a>
                     </li>
+
+                    {{-- Mikrobiologi Air --}}
+                    <li class="dropdown">
+                        <a href="/supervisor/mikrobiologi" class="nav-link"><i class="fas fa-bacterium"></i><span>Mikrobiologi Air</span></a>
+                    </li>
                     {{-- <li class="dropdown">
                         <a href="/supervisor/analisakimia/history" class="nav-link"><i class="fas fa-history"></i><span>History Delete</span></a>
                     </li> --}}
