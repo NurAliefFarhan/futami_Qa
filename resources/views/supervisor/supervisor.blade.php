@@ -202,8 +202,7 @@
                         </div>
                     </div>
                 </li> --}}
-                <li class="dropdown"><a href="#" data-toggle="dropdown"
-                        class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                         <img alt="image" src="{{asset('assets/template/stisla/assets/img/avatar/avatar-3.png')}}" class="rounded-circle mr-1" style="width:40px; height:40px; border-radius:50%;">
 
                         {{-- <img alt="image" src="{{asset('assets/img/admin.jpg')}}" class="rounded-circle mr-1" style="width:40px; height:40px; border-radius:50%;"> --}}
@@ -212,9 +211,9 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-title">Hi, {{ Auth::user()->nama }}</div>
-                        {{-- <a href="features-profile.html" class="dropdown-item has-icon">
+                        <a href="/profile" class="dropdown-item has-icon">
                             <i class="far fa-user"></i> Profile
-                        </a> --}}
+                        </a>
                         {{-- <a href="features-activities.html" class="dropdown-item has-icon">
                             <i class="fas fa-bolt"></i> Activities
                         </a> --}}

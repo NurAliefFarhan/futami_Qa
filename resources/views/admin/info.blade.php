@@ -225,26 +225,6 @@
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>Dashboard</p>
                             </a>
-                            {{-- <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="./index.html" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./index2.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v2</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="./index3.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
-                                    </a>
-                                </li>
-                            </ul> --}}
                         </li>
                         {{-- <li class="nav-item">
                             <a href="pages/widgets.html" class="nav-link">
@@ -411,37 +391,20 @@
                         </li> --}}
                         <li class="nav-item">
                             <a href="/admin/adduser" class="nav-link">
-                                <i class="nav-icon fa-regular fa-user"></i>
+                                <i class="nav-icon fa-solid fa-user-plus"></i>
                                 <p>
-                                    Forms
+                                    Users
                                 </p>
                             </a>
-                            {{-- <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/forms/general.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>General Elements</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/advanced.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Advanced Elements</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/editors.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Editors</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/validation.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Validation</p>
-                                    </a>
-                                </li>
-                            </ul> --}}
+                        </li> 
+                        
+                        <li class="nav-item">
+                            <a href="/superadmin/profile" class="nav-link">
+                                <i class="nav-icon fa-regular fa-user"></i>
+                                <p>
+                                    Profile
+                                </p>
+                            </a>
                         </li>
                         {{-- <li class="nav-item">
                             <a href="#" class="nav-link">

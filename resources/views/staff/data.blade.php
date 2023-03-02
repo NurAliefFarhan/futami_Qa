@@ -156,9 +156,9 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-title">{{ Auth::user()->nama }}</div>
-                        {{-- <a href="features-profile.html" class="dropdown-item has-icon">
+                        <a href="/profile" class="dropdown-item has-icon">
                             <i class="far fa-user"></i> Profile
-                        </a> --}}
+                        </a>
                         {{-- <a href="features-activities.html" class="dropdown-item has-icon">
                                             <i class="fas fa-bolt"></i> Activities
                                         </a>

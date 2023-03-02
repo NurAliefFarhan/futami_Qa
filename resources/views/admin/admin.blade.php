@@ -414,12 +414,23 @@
                         </li> --}}
                         <li class="nav-item">
                             <a href="/admin/adduser" class="nav-link">
+                                <i class="nav-icon fa-solid fa-user-plus"></i>
+                                <p>
+                                    Users
+                                </p>
+                            </a>
+                        </li> 
+                        
+                        <li class="nav-item">
+                            <a href="/superadmin/profile" class="nav-link">
                                 <i class="nav-icon fa-regular fa-user"></i>
                                 <p>
-                                    Forms
+                                    Profile
                                 </p>
                             </a>
                         </li>
+
+                        
                         {{-- <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
@@ -1536,8 +1547,7 @@
     <script src="{{asset('assets/template/plugins/moment/moment.min.js')}}"></script>
     <script src="{{asset('assets/template/plugins/daterangepicker/daterangepicker.js')}}"></script>
     <!-- Tempusdominus Bootstrap 4 -->
-    <script src="{{asset('assets/template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}">
-    </script>
+    <script src="{{asset('assets/template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
     <!-- Summernote -->
     <script src="{{asset('assets/template/plugins/summernote/summernote-bs4.min.js')}}"></script>
     <!-- overlayScrollbars -->

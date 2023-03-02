@@ -8,6 +8,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\MikrobiologiAirController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -35,6 +36,26 @@ Route::get('/', [LoginController::class, 'lending'])->name('lending');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
+//Route Profile
+Route::middleware('isLogin', 'cekRole:operator,staff,supervisor,superadmin')->group(function () {
+    Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+    Route::patch('/profile/{id}', [UserController::class, 'updateProfile'])->name('profile.post'); 
+    Route::get('/profile/password_verify', [UserController::class, 'password_verify'])->name('password_verify');
+    Route::post('/profile/password_verify', [UserController::class, 'verify'])->name('verify.post');
+    Route::get('/profile/password', [UserController::class, 'password'])->name('password');
+    Route::patch('/profile/update_password/{id}', [UserController::class, 'updatePassword'])->name('password.update');
+    
+    
+});
+
+Route::middleware('isLogin', 'cekRole:superadmin')->group(function () {
+    Route::get('/superadmin/profile', [UserController::class, 'superadmin_profile'])->name('superadmin_profile');
+    Route::patch('/superadmin/profile/{id}', [UserController::class, 'superadmin_updateProfile'])->name('superadmin_profile.post'); 
+    Route::get('/superadmin/profile/password', [UserController::class, 'superadmin_password'])->name('superadmin_password');
+    Route::patch('/superadmin/profile/update_password/{id}', [UserController::class, 'superadmin_updatePassword'])->name('superadmin_password.update');
+    
+});
+
 
 Route::middleware('isLogin', 'cekRole:operator')->group(function () {
     //Route Operator 
@@ -61,7 +82,11 @@ Route::middleware('isLogin', 'cekRole:operator')->group(function () {
 
     Route::get('/operator/analisakimia/history', [OperatorController::class, 'analisakimia_history'])->name('analisakimia_history');
     
+    
+
 });
+
+
 
 // PROJECT Route mikrobiologi air 
 Route::middleware('isLogin', 'cekRole:operator,staff,supervisor,superadmin')->group(function () {
@@ -82,7 +107,7 @@ Route::middleware('isLogin', 'cekRole:operator,staff,supervisor,superadmin')->gr
 
 
 
-    //Route Staff 
+    // //Route Staff 
     Route::get('/staff/mikrobiologi', [MikrobiologiAirController::class, 'staff_mikrobiologi'])->name('staff_mikrobiologi');
     Route::patch('/staff/mikrobiologi/ttd/{id}', [MikrobiologiAirController::class, 'mikrobiologi_staffttd'])->name('mikrobiologi_staffttd');  
     Route::patch('/staff/mikrobiologi/declinettd/{id}', [MikrobiologiAirController::class, 'mikrobiologi_staff_declinettd'])->name('mikrobiologi_staff_declinettd');  
@@ -107,7 +132,14 @@ Route::middleware('isLogin', 'cekRole:operator,staff,supervisor,superadmin')->gr
     Route::get('/superadmin/mikrobiologi/history', [MikrobiologiAirController::class, 'superadmin_mikrobiologi_history'])->name('superadmin_mikrobiologi_history');
 
 });
+// Route::middleware('isLogin', 'cekRole:staff')->group(function () {
+//     //Route Staff 
+//     Route::get('/staff/mikrobiologi', [MikrobiologiAirController::class, 'staff_mikrobiologi'])->name('staff_mikrobiologi');
+//     Route::patch('/staff/mikrobiologi/ttd/{id}', [MikrobiologiAirController::class, 'mikrobiologi_staffttd'])->name('mikrobiologi_staffttd');  
+//     Route::patch('/staff/mikrobiologi/declinettd/{id}', [MikrobiologiAirController::class, 'mikrobiologi_staff_declinettd'])->name('mikrobiologi_staff_declinettd');  
+//     Route::get('/staff/mikrobiologi/pdf/{id}', [MikrobiologiAirController::class, 'staff_mikrobiologi_pdf'])->name('staff_mikrobiologi_pdf');
 
+// });
 
 
 //Staff Route 

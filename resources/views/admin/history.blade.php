@@ -409,37 +409,20 @@
                         </li> --}}
                         <li class="nav-item">
                             <a href="/admin/adduser" class="nav-link">
-                                <i class="nav-icon fa-regular fa-user"></i>
+                                <i class="nav-icon fa-solid fa-user-plus"></i>
                                 <p>
-                                    Forms
+                                    Users
                                 </p>
                             </a>
-                            {{-- <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/forms/general.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>General Elements</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/advanced.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Advanced Elements</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/editors.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Editors</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/validation.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Validation</p>
-                                    </a>
-                                </li>
-                            </ul> --}}
+                        </li> 
+                        
+                        <li class="nav-item">
+                            <a href="/superadmin/profile" class="nav-link">
+                                <i class="nav-icon fa-regular fa-user"></i>
+                                <p>
+                                    Profile
+                                </p>
+                            </a>
                         </li>
                         {{-- <li class="nav-item">
                             <a href="#" class="nav-link">

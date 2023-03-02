@@ -68,6 +68,6 @@ class Kernel extends HttpKernel
         'isLogin' => \App\Http\Middleware\isLogin::class,
         'isGuest' => \App\Http\Middleware\isGuest::class,
         'cekRole' => \App\Http\Middleware\cekRole::class,
-      
+               
     ];
 }

@@ -226,13 +226,22 @@
                         </li>
                         <li class="nav-item">
                             <a href="/admin/adduser" class="nav-link">
+                                <i class="nav-icon fa-solid fa-user-plus"></i>
+                                <p>
+                                    Users
+                                </p>
+                            </a>
+                        </li> 
+                        
+                        <li class="nav-item">
+                            <a href="/superadmin/profile" class="nav-link">
                                 <i class="nav-icon fa-regular fa-user"></i>
                                 <p>
-                                    Forms
+                                    Profile
                                 </p>
                             </a>
                         </li>
-                        
+
                         <li class="nav-item" style="margin-top:70%;">
                             <a href="/logout" class="nav-link text-danger">
                                 <i class="fas fa-sign-out-alt"></i>

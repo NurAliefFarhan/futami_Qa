@@ -31,6 +31,9 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-title">{{ Auth::user()->nama }}</div>
                         <div class="dropdown-divider"></div>
+                        <a href="/profile" class="dropdown-item has-icon">
+                            <i class="far fa-user"></i> Profile
+                        </a>
                         <a href="/logout" class="dropdown-item has-icon text-danger">
                             <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
@@ -92,9 +95,9 @@
 
 
                                 @if(Session::get('successAdd'))
-                                <div class="alert alert-success w-70">
-                                    {{Session::get('successAdd')}}
-                                </div>
+                                    <div class="alert alert-success w-70">
+                                        {{Session::get('successAdd')}}
+                                    </div>
                                 @endif
 
                                 @if(Session::get('successDelete'))
