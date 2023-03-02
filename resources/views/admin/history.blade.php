@@ -1054,7 +1054,7 @@
     <!-- AdminLTE App -->
     <script src="{{asset('assets/template/dist/js/adminlte.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('assets/template/dist/js/demo.js')}}"></script>
+    {{-- <script src="{{asset('assets/template/dist/js/demo.js')}}"></script> --}}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{asset('assets/template/dist/js/pages/dashboard.js')}}"></script>
 
@@ -1080,7 +1080,7 @@
     <!-- AdminLTE App -->
     <script src="{{asset('assets/template/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('assets/template/dist/js/demo.js')}}"></script>
+    {{-- <script src="{{asset('assets/template/dist/js/demo.js')}}"></script> --}}
     <!-- Page specific script -->
     <script>
       $(function () {
@@ -1133,7 +1133,7 @@
     <!-- AdminLTE App -->
     <script src="{{asset('assets/template/dist/js/adminlte.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('assets/template/dist/js/demo.js')}}"></script>
+    {{-- <script src="{{asset('assets/template/dist/js/demo.js')}}"></script> --}}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{asset('assets/template/dist/js/pages/dashboard.js')}}"></script>
 </body>

@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash; 
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert; 
+
 
 class LoginController extends Controller
 {
@@ -61,7 +63,7 @@ class LoginController extends Controller
             'role_id' => $request->jabatan, 
         ]);
         return redirect('/login')->with('success', 'Anda berhasil membuat akun!'); //mereturn / lewat / , bukan lewat name yang diberikan 
-    }
+    }   
 
 
     //Route Login 
@@ -80,6 +82,8 @@ class LoginController extends Controller
             'nohp.exists' => "This no.handphone doesn't exists",
         ]);
 
+
+
         $user = $request->only('nohp', 'password');
         if (Auth::attempt($user) &&  Auth::user()->role->name == 'operator') {
             return redirect('/operator')->with('successLogin', "Welcome!");
@@ -88,12 +92,24 @@ class LoginController extends Controller
         }elseif (Auth::attempt($user) && Auth::user()->role->name == 'supervisor') {
             return redirect('/supervisor')->with('successLogin', "Welcome!");
         }elseif (Auth::attempt($user) && Auth::user()->role->name == 'superadmin') {
-            return redirect('/admin')->with('successLogin', "Welcome!");
+            // return redirect('/admin')->with('successLogin', "Welcome!");
+            // $user = Auth::user();
+            // Alert::success('Selamat datang, ' . $user->name . '!', 'Login berhasil');
+            // Alert::success('Success Title', 'Success Message');
+            // return redirect('/admin');
+
+            $user = Auth::user()->nama;
+            $message = 'Welcome, ' . $user . '!'; 
+            // dd($message);
+            return redirect('/admin')->with('successLogin', $message);
         }else {
             // db('salah');
             return redirect('/login')->with('loginFail', "Email-Address And Password Are Wrong.");
         }
     }
+
+  
+
 
     public function logout()
     {
