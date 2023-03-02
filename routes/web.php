@@ -37,7 +37,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 //Route Profile
-Route::middleware('isLogin', 'cekRole:operator,staff,supervisor,superadmin')->group(function () {
+Route::middleware('isLogin', 'cekRole:operator,staff,supervisor')->group(function () {
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     Route::patch('/profile/{id}', [UserController::class, 'updateProfile'])->name('profile.post'); 
     Route::get('/profile/password_verify', [UserController::class, 'password_verify'])->name('password_verify');
