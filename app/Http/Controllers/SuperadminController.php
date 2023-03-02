@@ -88,18 +88,19 @@ class SuperadminController extends Controller
         //menampilkan form edit data
         //ambil data dari db yang idnya sama dengan id yang dikirim dari routenya
         $users = User::Where('id', $id)->first();
+        $roles = Role::all();
         // lalu tampilkan halaman dari view edit dengan mengirim data yang ada di variable todo
-        return view('admin.editUser', compact('users'));
+        return view('admin.editUser', compact('users', 'roles'));
     }
    
     public function userUpdate(Request $request, $id)
     {
         //validasi
         $request->validate([
-            'nama' => 'required|min:9|max:25',
+            'nama' => 'required|min:3|max:25',
             'nohp' => 'required|min:10|max:13',
             'email' => 'required',
-            'password' => 'required|min:6|max:13',
+            // 'password' => 'required|min:6|max:13',
             'jabatan' => 'required',
             'alamat' => 'required',
         ]);
@@ -107,7 +108,7 @@ class SuperadminController extends Controller
             'nama' => $request->nama,
             'nohp' => $request->nohp,
             'email' => $request->email,
-            'password' => Hash::make($request->password), //request password itu adalah password  
+            // 'password' => Hash::make($request->password), //request password itu adalah password  
             'jabatan' => $request->jabatan,
             'alamat' => $request->alamat, 
             'status' => 0, 

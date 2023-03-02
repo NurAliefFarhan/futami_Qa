@@ -115,7 +115,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/admin/adduser" class="nav-link">
+                            <a href="/admin/adduser" class="nav-link active">
                                 <i class="nav-icon fa-solid fa-user-plus"></i>
                                 <p>
                                     Users
@@ -266,18 +266,31 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Password (hasil enkripsi data)</label>
-                                                    <input type="password" name="password" class="form-control" value="{{$users['password']}}" placeholder="Masukkan Password">
+                                                    <input type="password" name="password" class="form-control" value="{{$users['password']}}" placeholder="Masukkan Password" disabled>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Pilih Jenis Jabatan</label>
                                                     <select class="form-control" name="jabatan" value="{{$users['jabatan']}}">
-                                                        <option value="{{$users['jabatan']}}">{{$users['jabatan']}}</option>
-                                                        <option hidden>-- Pilih Jenis Jabatan --</option>
-                                                        <option value="operator">Operator</option>
-                                                        <option value="staff">Staff</option>
-                                                        <option value="supervisor">Supervisor</option>
+                                                        <option hidden value="{{$users['jabatan']}}">
+                                                            {{-- {{$users['jabatan']}} --}}
+                                                            @if ($users['jabatan'] == 1)
+                                                                Operator
+                                                            @elseif ($users['jabatan'] == 2)
+                                                                Staff
+                                                            @elseif ($users['jabatan'] == 3)
+                                                                Supervisor
+                                                            @elseif ($users['jabatan'] == 4)
+                                                                Superadmin
+                                                            @endif
+                                                        
+                                                        </option>
+                                                        {{-- <option hidden>-- Pilih Jenis Jabatan --</option> --}}
+                                                                                                            
+                                                        @foreach ($roles as $role)
+                                                            <option value="{{ $role['id'] }}">{{ $role['name'] }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
