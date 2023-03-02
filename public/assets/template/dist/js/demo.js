@@ -16,7 +16,7 @@
       // eslint-disable-next-line no-alert
       alert('Selamat datang !') 
     }
-  }, 1000)
+  }, 1000) 
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
