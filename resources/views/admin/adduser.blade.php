@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | General Form Elements</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
 
+    
+    
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -25,7 +29,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
              <!-- Navbar -->
-             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -42,7 +46,7 @@
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Navbar Search -->
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                             <i class="fas fa-search"></i>
                         </a>
@@ -61,7 +65,7 @@
                                 </div>
                             </form>
                         </div>
-                    </li>
+                    </li> --}} 
     
                     <!-- Messages Dropdown Menu -->
                     <li class="nav-item dropdown">
@@ -153,11 +157,11 @@
                             <i class="fas fa-expand-arrows-alt"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
                             <i class="fas fa-th-large"></i>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </nav>
             <!-- /.navbar -->
@@ -445,6 +449,11 @@
                                             </div>
                                         @endif
 
+                                        @if(Session::get('successReset'))
+                                            <div class="alert alert-success w-70">
+                                                {{Session::get('successReset')}}
+                                            </div>
+                                        @endif
 
                                         <div class="row">
                                             <div class="col-sm-6">
@@ -861,7 +870,7 @@
                                 
                                             </td> 
                                             <td>{{$user->alamat}}</td>
-                                            <td>
+                                            <td align="center">
                                                 <form action="{{route('user.delete', $user['id'])}}" method="POST">
                                                     @csrf 
                                                     @method('DELETE') 
@@ -869,6 +878,13 @@
                                                     
                                                     <a class="fa-solid fa-pen-to-square text-success btn" href="{{route('user.edit', $user->id)}}">
                                                 
+                                                </form>
+                                                <br>
+                                                <form action="{{route('user.reset', $user['id'])}}" method="POST">
+                                                    @csrf 
+                                                    @method('PATCH') 
+                                                    <button class="text-danger btn"><i class="ri-shield-keyhole-fill"></i></button>
+                                                                                                    
                                                 </form>
                                             </td>
                                         </tr>

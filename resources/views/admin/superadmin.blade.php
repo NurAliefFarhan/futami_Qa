@@ -5,28 +5,24 @@
 <div id="app">
     <div class="main-wrapper main-wrapper-1">
         <div class="navbar-bg"></div>
-        <nav class="navbar navbar-expand-lg main-navbar">
-            <form class="form-inline mr-auto">
-                <ul class="navbar-nav mr-3">
-                    <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-                    <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
-                </ul>
-            </form>
-            <ul class="navbar-nav navbar-right">
-                <li class="dropdown"><a href="#" data-toggle="dropdown"
-                        class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                        {{-- <img alt="image" src="{{asset('assets/img/admin.jpg')}}" class="rounded-circle mr-1" style="width:40px; height:40px; border-radius:50%;"> --}}
-                        <img alt="image" src="{{asset('assets/template/stisla/assets/img/avatar/avatar-3.png')}}" class="rounded-circle mr-1" style="width:40px; height:40px; border-radius:50%;">
-                        {{-- <img class="img-profile rounded-circle" src="{{asset('assets/img/admin.jpg')}}"> --}}
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
 
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto"> 
+
+                <!-- Messages Dropdown Menu -->
+                <li class="nav-item dropdown">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <div class="dropdown-title">Hi, {{ Auth::user()->nama }}</div>
-                        <div class="dropdown-divider"></div>
-                        <a href="/logout" class="dropdown-item has-icon text-danger">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </a>
-                    </div>
                 </li>
             </ul>
         </nav>

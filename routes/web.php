@@ -174,6 +174,8 @@ Route::middleware('isLogin', 'cekRole:superadmin')->group(function () {
     Route::get('/admin/adduser', [SuperadminController::class, 'adduser'])->name('adduser');
     Route::post('/admin/adduser', [SuperadminController::class, 'inputUser'])->name('user.post'); 
     Route::delete('/admin/adduser/delete/{id}', [SuperadminController::class, 'userDestroy'])->name('user.delete'); //route untuk btn delete todo index 
+    Route::patch('/admin/adduser/reset/{id}', [SuperadminController::class, 'userReset'])->name('user.reset'); //route untuk btn delete todo index 
+
     Route::get('/admin/adduser/edit/{id}', [SuperadminController::class, 'userEdit'])->name('user.edit'); //untuk mengedit-> {id} untuk mengedit id yang dipilih
     Route::patch('/admin/adduser/update/{id}', [SuperadminController::class, 'userUpdate'])->name('user.update');
     Route::get('/admin/info', [SuperadminController::class, 'info'])->name('info');

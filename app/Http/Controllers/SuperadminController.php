@@ -117,6 +117,17 @@ class SuperadminController extends Controller
         return redirect()->route('adduser')->with('successUpdate','Berhasil mengupdate data user!');
     }
 
+
+    public function userReset(Request $request, $id)
+    {
+        User::where('id', $id)->update([
+            'password' => Hash::make(1234567890), //request password itu adalah password  
+        ]);
+        //redirect apabila berhasil bersama dengan alert-nya
+        return redirect()->route('adduser')->with('successReset','Berhasil Melakukan Reset data user!');
+    }
+
+
     public function info(Request $request)
     {
         $futamis = Futami::where('delete', 0)->get();
