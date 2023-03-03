@@ -395,14 +395,6 @@
     </form>
     {{-- </form> --}}
 
-    <footer class="main-footer">
-        <div class="footer-left">
-            Futami Operator
-            {{-- Copyright &copy; 2018 <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a> --}}
-        </div>
-        <div class="footer-right">
-        </div>
-    </footer>
 </div>
 </div>
 
@@ -435,10 +427,10 @@
                         <input type="text" name="inputSampel[${i}][parameter_nilaiuji_c4]" class="form-control" id="inputEmail4" placeholder=" ">
                     </div>
                     <div class="form-group col-md-2"> 
-                        <textarea type="text" name="inputSampel[${i}][spesifikasi]" class="form-control" id="inputEmail4" placeholder="Masukkan spesifikasi"></textarea>
+                        <textarea type="text" name="inputSampel[${i}][spesifikasi]" class="form-control" id="inputEmail4" placeholder="Masukkan spesifikasi (optional)"></textarea>
                     </div>
                     <div class="form-group col-md-2">
-                        <textarea type="text" name="inputSampel[${i}][keterangan]" rows="1" class="form-control" id="inputEmail4" placeholder="Masukkan keterangan"></textarea>
+                        <textarea type="text" name="inputSampel[${i}][keterangan]" rows="1" class="form-control" id="inputEmail4" placeholder="Masukkan keterangan (optional)"></textarea>
                     </div>
                     <div class="form-group col-md-1">
                         <button type="button" name="remove" id="remove" class="btn btn-danger" style="margin-left:-5%;"><i class="fa-solid fa-trash"></i></button>

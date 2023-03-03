@@ -6,11 +6,11 @@
         <div class="main-content">
             <section class="section">
                 <div class="section-header">
-                    <h1>Analisa Mikrobiologi Air</h1>
+                    <h1>Analisa Mikrobiologi Produk</h1>
                 </div>
 
                 <div class="section-body">
-                    <h2 class="section-title">Analisa Mikrobiologi Air</h2>
+                    <h2 class="section-title">Analisa Mikrobiologi Produk</h2>
 
                     {{-- <p class="section-lead">Example of some Bootstrap table components.</p> --}}
 
@@ -56,9 +56,9 @@
                                     {{-- <a href="/operator/tambahdata" class="btn btn-success">Tambah Data</a> --}}
 
                                     {{-- button create multi form --}}
-                                    <a href="/operator/add_mikrobiologi" class="btn btn-success" style="margin-top: 20px;"><i class="fa fa-plus"></i> Tambah Data</a>
+                                    <a href="/operator/add_mikrobiologi_produk" class="btn btn-success" style="margin-top: 20px;"><i class="fa fa-plus"></i> Tambah Data</a>
                                     
-                                    <a href="/operator/mikrobiologi/history" class="btn btn-danger" style="width:auto; text-align:center; float:right; margin:20px;"><i class="fa fa-history"></i> History Delete</a>
+                                    <a href="/operator/mikrobiologi_produk/history" class="btn btn-danger" style="width:auto; text-align:center; float:right; margin:20px;"><i class="fa fa-history"></i> History Delete</a>
                                   </div>
 
                                 {{-- <form action="{{route('operatorpdf')}}" method="POST" target="_blank">
@@ -83,35 +83,33 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>No.Dokumen</th>
+                                                <th>Nama Produk</th>
+                                                <th>Jumlah Batch</th>
+                                                <th>Tgl. Produksi</th>
                                                 <th>Tgl. Inokulasi</th>
                                                 <th>Tgl. Pengamatan</th>
-                                                {{-- <th>Sampel air</th>
-                                                <th>TPC (cfu/ml)</th>
-                                                <th>Yeast & Mold (cfu/ml)</th>
-                                                <th>Coliform (MPN/100ml)</th>
-                                                <th>Keterangan</th> --}}
                                                 <th>Tanda Tangan Operator</th>
                                                 <th>Action</th>
                                             </tr>
-                                            @forelse ($mikrobiologi_airs as $mikrobiologi)
+                                            @forelse ($mikrobiologi_produk as $mikrobiologi)
                                                 <tr>
-                                                    <td>{{$no++}}</td>
+                                                    <td>{{++$no}}</td>
                                                     <td>{{$mikrobiologi->nodokumen}}</td>
                                                     <td>{{Carbon\Carbon::parse($mikrobiologi->tgl_inokulasi)->translatedFormat('d F Y')}}</td>
                                                     <td>{{Carbon\Carbon::parse($mikrobiologi->tgl_pengamatan)->translatedFormat('d F Y')}}</td>
                                                     <td align="center">
-                                                      @if($mikrobiologi['statusOP'] == 0)
-                                                        <form action="/operator/mikrobiologi/ttd/{{$mikrobiologi['id']}}" method="POST" class="text-center">
-                                                          @csrf
-                                                          @method('PATCH')
-                                                          <button type="submit" class="btn btn-success btn" style="">TTD</button>
-                                                        </form>
-                                  
-                                                        
-                                                      @elseif($mikrobiologi['statusOP'] == 1)
-                                                        <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($mikrobiologi->user_id_OP .'_'. $mikrobiologi->name_id_OP)) !!}" alt="">
-                                                        
-                                                      @endif
+                                                        @if($mikrobiologi['statusOP'] == 0)
+                                                            <form action="/operator/mikrobiologi/ttd/{{$mikrobiologi['id']}}" method="POST" class="text-center">
+                                                                @csrf
+                                                                @method('PATCH')
+                                                                <button type="submit" class="btn btn-success btn" style="">TTD</button>
+                                                            </form>
+                                    
+                                                            
+                                                        @elseif($mikrobiologi['statusOP'] == 1)
+                                                            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($mikrobiologi->user_id_OP .'_'. $mikrobiologi->name_id_OP)) !!}" alt="">
+                                                            
+                                                        @endif
 
                                                     </td>
                                                     <td>
@@ -142,7 +140,7 @@
                                             @endforelse
                                             
                                           </table>
-                                            {{ $mikrobiologi_airs->links('pagination::bootstrap-4') }}
+                                            {{-- {{ $mikrobiologi_produk->links('pagination::bootstrap-4') }} --}}
                                         </div>
                                 </div>
                             </div>
@@ -153,3 +151,5 @@
         </div>
 
 @endsection
+
+

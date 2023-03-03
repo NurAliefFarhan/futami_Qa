@@ -152,25 +152,25 @@
                                                     <label for="inputEmail4">Keterangan</label>
                                                 </div>
                                             </div>
-                                            @foreach ($sampel_mikrobiologis as $sampel_mikrobiologi)
 
-                                            <div class="form-row" style="margin-top:-2%;">
-                                                <div class="form-group col-md-3">
-                                                    <input type="text" name="inputSampel[{{ $i }}][sampel_air]" value="{{$sampel_mikrobiologi['sampel_air']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
-                                                </div> 
-                                                <div class="form-group col-md-2">
-                                                    <input type="text" name="inputSampel[{{ $i }}][tpc]" value="{{$sampel_mikrobiologi['tpc']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
-                                                </div> 
-                                                <div class="form-group col-md-2">
-                                                    <input type="text" name="inputSampel[{{ $i }}][yeast_mold]" value="{{$sampel_mikrobiologi['yeast_mold']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
-                                                </div> 
-                                                <div class="form-group col-md-2">
-                                                    <input type="text" name="inputSampel[{{ $i }}][coliform]" value="{{$sampel_mikrobiologi['coliform']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
-                                                </div> 
-                                                <div class="form-group col-md-3">
-                                                    <input type="text" name="inputSampel[{{ $i }}][keterangan]" value="{{$sampel_mikrobiologi['keterangan']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
-                                                </div> 
-                                            </div>
+                                            @foreach ($sampel_mikrobiologis as $sampel_mikrobiologi)
+                                                <div class="form-row" style="margin-top:-2%;">
+                                                    <div class="form-group col-md-3">
+                                                        <input type="text" name="inputSampel[{{ $i }}][sampel_air]" value="{{$sampel_mikrobiologi['sampel_air']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
+                                                    </div> 
+                                                    <div class="form-group col-md-2">
+                                                        <input type="text" name="inputSampel[{{ $i }}][tpc]" value="{{$sampel_mikrobiologi['tpc']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
+                                                    </div> 
+                                                    <div class="form-group col-md-2">
+                                                        <input type="text" name="inputSampel[{{ $i }}][yeast_mold]" value="{{$sampel_mikrobiologi['yeast_mold']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
+                                                    </div> 
+                                                    <div class="form-group col-md-2">
+                                                        <input type="text" name="inputSampel[{{ $i }}][coliform]" value="{{$sampel_mikrobiologi['coliform']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
+                                                    </div> 
+                                                    <div class="form-group col-md-3">
+                                                        <input type="text" name="inputSampel[{{ $i }}][keterangan]" value="{{$sampel_mikrobiologi['keterangan']}}" class="form-control" id="inputEmail4" placeholder="Masukkan nama sampel">
+                                                    </div> 
+                                                </div>
                                             @endforeach
 
 

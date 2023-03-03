@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('parameter_nilaiuji_c2')->nullable();
             $table->string('parameter_nilaiuji_c3')->nullable();
             $table->string('parameter_nilaiuji_c4')->nullable();
-            $table->string('spesifikasi');
-            $table->string('keterangan'); 
+            $table->string('spesifikasi')->nullable();
+            $table->string('keterangan')->nullable(); 
             $table->timestamps();
         });
     }

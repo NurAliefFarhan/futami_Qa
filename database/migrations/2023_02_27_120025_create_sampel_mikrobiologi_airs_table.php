@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('tpc');
             $table->string('yeast_mold');
             $table->string('coliform');
-            $table->string('keterangan');
+            $table->string('keterangan')->nullable();
             $table->timestamps();
         });
     }

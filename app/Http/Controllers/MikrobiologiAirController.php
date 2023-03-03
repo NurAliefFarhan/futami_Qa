@@ -156,7 +156,7 @@ class MikrobiologiAirController extends Controller
             'inputSampel.*.tpc' => 'required',
             'inputSampel.*.yeast_mold' => 'required',
             'inputSampel.*.coliform' => 'required',
-            'inputSampel.*.keterangan' => 'required|min:5',
+            // 'inputSampel.*.keterangan' => 'required|min:5',
         ],[
             'inputSampel.required' => 'Kolom sampel_air harus di isi',
             'inputSampel.array' => 'Kolom sampel_air harus berupa array',
@@ -166,8 +166,8 @@ class MikrobiologiAirController extends Controller
             'inputSampel.*.tpc.required' => 'Kolom TPC harus di isi',
             'inputSampel.*.yeast_mold.required' => 'Kolom Yeast & Mold harus di isi',
             'inputSampel.*.coliform.required' => 'Kolom Coliform harus di isi',
-            'inputSampel.*.keterangan.required' => 'Kolom keterangan harus di isi',
-            'inputSampel.*.keterangan.min' => 'Kolom keterangan harus memiliki panjang minimal 5 karakter',
+            // 'inputSampel.*.keterangan.required' => 'Kolom keterangan harus di isi',
+            // 'inputSampel.*.keterangan.min' => 'Kolom keterangan harus memiliki panjang minimal 5 karakter',
         ]);
     
         foreach($request->inputSampel as $key => $value){ 

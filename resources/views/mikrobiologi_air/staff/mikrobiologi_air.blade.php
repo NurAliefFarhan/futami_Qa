@@ -213,14 +213,6 @@
                 </div>
             </section>
         </div>
-        <footer class="main-footer">
-            <div class="footer-left">
-                Futami Staff
-            </div>
-            <div class="footer-right">
-
-            </div>
-        </footer>
     </div>
 </div>
 

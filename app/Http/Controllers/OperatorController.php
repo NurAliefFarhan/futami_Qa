@@ -285,8 +285,8 @@ class OperatorController extends Controller
             // 'inputSampel.*.parameter_nilaiuji_c2' => 'required',
             // 'inputSampel.*.parameter_nilaiuji_c3' => 'required',
             // 'inputSampel.*.parameter_nilaiuji_c4' => 'required',
-            'inputSampel.*.spesifikasi' => 'required|min:5',
-            'inputSampel.*.keterangan' => 'required|min:5',
+            // 'inputSampel.*.spesifikasi' => 'required|min:5',
+            // 'inputSampel.*.keterangan' => 'required|min:5',
         ],[
             'inputSampel.required' => 'Kolom sampel harus di isi',
             'inputSampel.array' => 'Kolom sampel harus berupa array',
@@ -300,8 +300,8 @@ class OperatorController extends Controller
             
             'inputSampel.*.spesifikasi.required' => 'Kolom spesifikasi harus di isi',
             'inputSampel.*.spesifikasi.min' => 'Kolom spesifikasi harus memiliki panjang minimal 5 karakter',
-            'inputSampel.*.keterangan.required' => 'Kolom keterangan harus di isi',
-            'inputSampel.*.keterangan.min' => 'Kolom keterangan harus memiliki panjang minimal 5 karakter',
+            // 'inputSampel.*.keterangan.required' => 'Kolom keterangan harus di isi',
+            // 'inputSampel.*.keterangan.min' => 'Kolom keterangan harus memiliki panjang minimal 5 karakter',
         ]);
     
         foreach($request->inputSampel as $key => $value){ 
@@ -367,16 +367,16 @@ class OperatorController extends Controller
             // 'inputSampel.*.parameter_nilaiuji_c2' => 'required',
             // 'inputSampel.*.parameter_nilaiuji_c3' => 'required',
             // 'inputSampel.*.parameter_nilaiuji_c4' => 'required',
-            'inputSampel.*.spesifikasi' => 'required|min:5',
-            'inputSampel.*.keterangan' => 'required|min:5',
+            // 'inputSampel.*.spesifikasi' => 'required|min:5',
+            // 'inputSampel.*.keterangan' => 'required|min:5',
         ],[
             'inputSampel.*.sampel.required' => 'Kolom sampel harus di isi',
             // 'inputSampel.*.parameter_nilaiuji.required' => 'Kolom parameter_nilaiuji harus di isi',
             // 'inputSampel.*.parameter_nilaiuji_c2.required' => 'Kolom parameter_nilaiuji harus di isi',
             // 'inputSampel.*.parameter_nilaiuji_c3.required' => 'Kolom parameter_nilaiuji harus di isi',
             // 'inputSampel.*.parameter_nilaiuji_c4.required' => 'Kolom parameter_nilaiuji harus di isi',
-            'inputSampel.*.spesifikasi.required' => 'Kolom spesifikasi harus di isi',
-            'inputSampel.*.keterangan.required' => 'Kolom keterangan harus di isi',
+            // 'inputSampel.*.spesifikasi.required' => 'Kolom spesifikasi harus di isi',
+            // 'inputSampel.*.keterangan.required' => 'Kolom keterangan harus di isi',
         ]);
 
         $sampel_data = [];
