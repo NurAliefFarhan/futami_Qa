@@ -194,7 +194,7 @@ Route::middleware('isLogin', 'cekRole:operator')->prefix('/operator')->group(fun
     Route::get('/add_mikrobiologi_produk', [MikrobiologiProdukController::class, 'add_mikrobiologi_produk'])->name('add_mikrobiologi_produk');
     Route::post('/add_mikrobiologi_produk', [MikrobiologiProdukController::class, 'input_mikrobiologi_produk'])->name('mikrobiologi_produk.post');
     Route::get('/sampel_mikrobiologi_produk/{id}', [MikrobiologiProdukController::class, 'sampel_mikrobiologi_produk'])->name('sampel_mikrobiologi_produk');
-    // Route::post('/operator/sampel_mikrobiologi/{id}', [MikrobiologiProdukController::class, 'input_sampel_mikrobiologi'])->name('sampel_mikrobiologi.post');
+    Route::post('/operator/sampel_mikrobiologi/{id}', [MikrobiologiProdukController::class, 'input_sampel_mikrobiologi'])->name('sampel_mikrobiologi.post');
     // Route::patch('/operator/mikrobiologi/ttd/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_operatorttd'])->name('mikrobiologi_operatorttd');  
     // Route::get('/operator/mikrobiologi/sampel/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_sampel'])->name('mikrobiologi_sampel');
     // Route::get('/operator/mikrobiologi/edit/{id}', [MikrobiologiProdukController::class, 'edit_mikrobiologi'])->name('edit_mikrobiologi');

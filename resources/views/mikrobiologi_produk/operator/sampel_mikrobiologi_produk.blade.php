@@ -7,7 +7,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Tambah Data Sampel Mikrobiologi Air</h1>
+                <h1>Tambah Data Sampel Mikrobiologi Produk</h1>
             </div>
 
 
@@ -37,7 +37,7 @@
 
 
             <div class="section-body">
-                <h2 class="section-title">Tambah Data Sampel Mikrobiologi Air</h2> 
+                <h2 class="section-title">Tambah Data Sampel Mikrobiologi Produk</h2> 
                 <div class="row shadow">
                     <div class="col-12">
                         <div class="card">

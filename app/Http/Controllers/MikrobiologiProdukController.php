@@ -96,12 +96,6 @@ class MikrobiologiProdukController extends Controller
         } 
        
         $get_last_no_dokumen = Mikrobiologi_air::latest()->first();
-        // if(is_null ($get_last_no_dokumen) ){
-        //     $get_last_no_dokumen = 0;
-        // }else{
-        //     // $get_last_no_dokumen->nodokumen;
-        //     $get_last_no_dokumen = Futami::latest()->first()->nodokumen;
-        // }
 
         if(is_null($get_last_no_dokumen) || $get_last_no_dokumen->created_at->format('y') !== $get_tahun) {
             $get_last_no_dokumen = 0;
@@ -142,12 +136,12 @@ class MikrobiologiProdukController extends Controller
         return redirect('/operator/sampel_mikrobiologi_produk/' .$mikrobiologiProduk->id)->with('successAdd', 'Berhasil membuat Dokumen Baru!'); //mereturn / lewat / , bukan lewat name yang diberikan 
     }
 
-    public function sampel_mikrobiologi(Request $request, $id)
+    public function sampel_mikrobiologi_produk(Request $request, $id)
     {
         $mikrobiologi = Mikrobiologi_produk::Where('id', $id)->first();
         // $futami_sampel_kimia = Futami_sampel_kimia::where('id_analisa_kimia', '=', $id)->get(); 
  
-        return view('mikrobiologi_air.operator.sampel_mikrobiologi', compact('id', 'mikrobiologi'));
+        return view('mikrobiologi_produk.operator.sampel_mikrobiologi_produk', compact('id', 'mikrobiologi'));
     }
 
 

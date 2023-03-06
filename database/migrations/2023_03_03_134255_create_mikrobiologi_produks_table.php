@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nodokumen');
             $table->string('nama_produk');
             $table->string('jumlah');
-            $table->date('tgl_produksi');
+            $table->date('tgl_produk');
             $table->date('tgl_inokulasi');
             $table->date('tgl_pengamatan');
             $table->string('statusOP');

@@ -40,8 +40,7 @@
                     <tr>
                         <td rowspan="4" colspan="" align="center">
                             {{-- logo futami  --}}
-                            <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('assets/img/futami bg.png'))) }}"
-                                style="width: 4cm; ">
+                            <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('assets/img/futami bg.png'))) }}" style="width: 4cm; ">
                         </td>
                         <td colspan="" align="center">PT FUTAMI FOOD & BEVERAGES</td>
                         <td colspan="" align="center">Document No.</td>

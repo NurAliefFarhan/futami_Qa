@@ -133,13 +133,23 @@
                 </form>
                 <a class="text-success btn" href="/operator/mikrobiologi_produk" style="margin-right:24%;"><i class="fa-solid fa-arrows-rotate fa-lg"></i></a>
 
-            @elseif (request()->is('operator/add_mikrobiologi_produk'))
+            {{-- @elseif (request()->is('operator/add_mikrobiologi_produk')) 
+                <form class="form-inline mr-auto">
+                    <ul class="navbar-nav mr-3">
+                        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+                        <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </form> --}}
+
+            @elseif (request()->is('operator/add_mikrobiologi_produk') || (request()->is('operator/sampel_mikrobiologi_produk/*')))
                 <form class="form-inline mr-auto">
                     <ul class="navbar-nav mr-3">
                         <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
                         <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
                     </ul>
                 </form>
+            
+            
             
             @endif
 
@@ -215,7 +225,7 @@
                             </a>
                         </div>
                     </li>
-                @elseif (request()->is('operator/mikrobiologi_produk') || request()->is('operator/add_mikrobiologi_produk'))
+                @elseif (request()->is('operator/mikrobiologi_produk') || request()->is('operator/add_mikrobiologi_produk') || (request()->is('operator/sampel_mikrobiologi_produk/*')))
                     <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                             <img alt="image" src="{{asset('assets/template/stisla/assets/img/avatar/avatar-3.png')}}" class="rounded-circle mr-1" style="width:40px; height:40px; border-radius:50%;">
 
@@ -266,13 +276,18 @@
                             </li>
 
                             {{-- Mikrobiologi Produk --}} 
-                            <li class="dropdown {{ request()->is('operator/mikrobiologi_produk') || request()->is('operator/add_mikrobiologi_produk') ? 'active' : '' }}">
+                            <li class="dropdown {{ request()->is('operator/mikrobiologi_produk') || request()->is('operator/add_mikrobiologi_produk') || (request()->is('operator/sampel_mikrobiologi_produk/*')) ? 'active' : '' }}">
                                 <a href="/operator/mikrobiologi_produk" class="nav-link"><i class="fas fa-boxes-stacked"></i><span>Mikrobiologi Produk</span></a>
                             </li>
-                            
+
+                            {{-- @if (request()->is('operator/sampel_mikrobiologi_produk/*'))
+                                <li class="dropdown {{ request()->is('operator/add_mikrobiologi_produk') || (request()->is('operator/sampel_mikrobiologi_produk/*')) ? 'active' : '' }}">
+                                    <a href="/operator/mikrobiologi_produk" class="nav-link"><i class="fas fa-boxes-stacked"></i><span>Mikrobiologi Produk</span></a>
+                                </li>
+                            @endif --}}
 
 
-                    </ul>
+                    </ul> 
                     <hr>
                 </aside>
             </div>

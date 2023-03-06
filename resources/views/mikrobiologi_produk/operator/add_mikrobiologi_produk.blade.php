@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="tgl_produksi">Tanggal Produksi</label>
-                                                <input type="date" name="tgl_produksi" class="form-control" id="tgl_produksi" placeholder="Masukkan Tanggal Produksi">
+                                                <input type="date" name="tgl_produk" class="form-control" id="tgl_produksi" placeholder="Masukkan Tanggal Produksi">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="tgl_inokulasi">Tanggal Inokulasi (Tanggal Pemindahan)</label>
