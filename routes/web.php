@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\FutamiController;
+use App\Http\Controllers\ParameterPengujianController; //parameter pengujian 
 use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\SupervisorController;
@@ -55,6 +56,16 @@ Route::middleware('isLogin', 'cekRole:superadmin')->group(function () {
     Route::get('/superadmin/profile/password', [UserController::class, 'superadmin_password'])->name('superadmin_password');
     Route::patch('/superadmin/profile/update_password/{id}', [UserController::class, 'superadmin_updatePassword'])->name('superadmin_password.update');
     
+});
+
+Route::middleware('isLogin', 'cekRole:operator')->prefix('/operator')->group(function () {
+    //Route Parameter Pengujian 
+    Route::get('/parameter_pengujian', [ParameterPengujianController::class, 'add'])->name('add');
+    Route::post('/parameter_pengujian', [ParameterPengujianController::class, 'inputparameter'])->name('parameter.post'); 
+    Route::delete('/parameter_pengujian/delete/{id}', [ParameterPengujianController::class, 'parameterDestroy'])->name('parameterDestroy'); //route untuk btn delete todo index     
+    Route::get('/parameter_pengujian/edit/{id}', [ParameterPengujianController::class, 'editParameter'])->name('editParameter');
+    Route::patch('/parameter_pengujian/edit/{id}', [ParameterPengujianController::class, 'updateParameter'])->name('updateParameter');
+
 });
 
 

@@ -54,9 +54,11 @@
                             <div class="button" style="margin-left:4%;">
                                 {{-- <button type="submit" name="submit" id="" class="btn btn-success">Tambah Data</button> --}}
                                 {{-- <a href="/operator/tambahdata" class="btn btn-success">Tambah Data</a> --}}
-
+                            
                                 {{-- button create multi form --}}
-                                <a href="/operator/analisakimia" class="btn btn-success" style="margin-top: 20px;">Tambah Data</a>
+                                <a href="/operator/analisakimia" class="btn btn-success" style="margin-top: 20px;"><i class="fa fa-plus"></i> Tambah Data</a>
+                                
+                                <a href="/operator/parameter_pengujian" class="btn btn-primary" style="margin-top: 20px;"><i class="fa fa-plus"></i> Tambah Parameter Pengujian</a>
                                 
                                 <a href="/operator/analisakimia/history" class="btn btn-danger" style="width:auto; text-align:center; float:right; margin:20px;"><i class="fa fa-history"></i> History Delete</a>
                               </div>
