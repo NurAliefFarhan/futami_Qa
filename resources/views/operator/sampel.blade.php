@@ -190,23 +190,22 @@
                                         <div class="table-responsive">
                                             <table class="table table-bordered table-md">
                                                 <tr>
-                                                    {{-- <th scope="col"><input type="checkbox" id="chkCheckAll"></th>  --}}
-                                                    
-                                                    <th scope="col">No</th>
-                                                    <th scope="col">Sampel</th>
+                                                    <th scope="col" rowspan="2" align="center" style="vertical-align:middle; text-align:center;">No</th>
+                                                    <th scope="col" rowspan="2" align="center" style="vertical-align: middle; text-align:center;">Sampel</th>
+                                                    <th scope="col" colspan="4" align="center" style="text-align:center;">Parameter dan Nilai Uji</th>
+                                                    <th scope="col" rowspan="2" align="center" style="vertical-align: middle; text-align: center;">Spesifikasi</th>
+                                                    <th scope="col" rowspan="2" align="center" style="vertical-align: middle; text-align: center;">Keterangan</th>
+                                                    <th scope="col" rowspan="2" align="center" style="vertical-align: middle; text-align: center;">Action</th>
+                                                </tr>
+                                                <tr>
                                                     <th scope="col">{{$futamis['parameter_pengujian']}}</th>
                                                     <th scope="col">{{$futamis['parameter_pengujian_c2']}}</th>
                                                     <th scope="col">{{$futamis['parameter_pengujian_c3']}}</th>
                                                     <th scope="col">{{$futamis['parameter_pengujian_c4']}}</th>
-                                                    <th scope="col">Spesifikasi</th>
-                                                    <th scope="col">Keterangan</th>
-                                                    <th scope="col">Action</th>
                                                 </tr>
                                                 <tr>
                                                     @forelse ($futami_sampel_kimia as $sampel)
                                                         <tr id="{{ $sampel->id }}">
-                                                            {{-- <td><input type="checkbox" name="sampels" class="CheckBoxSampel" value="{{ $sampel->id }}" id="checkSampel"></td> --}}
-
                                                             <th scope="row">{{ ++$no }}</th>
                                                             <td>{{ $sampel->sampel }}</td>
                                                             <td>{{ $sampel->parameter_nilaiuji }}</td>

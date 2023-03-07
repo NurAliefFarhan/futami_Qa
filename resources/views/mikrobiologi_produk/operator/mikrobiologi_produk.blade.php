@@ -93,13 +93,16 @@
                                             </tr>
                                             @forelse ($mikrobiologi_produk as $mikrobiologi)
                                                 <tr>
-                                                    <td>{{++$no}}</td>
+                                                    <td>{{$no++}}</td>
                                                     <td>{{$mikrobiologi->nodokumen}}</td>
+                                                    <td>{{$mikrobiologi->nama_produk}}</td>
+                                                    <td>{{$mikrobiologi->jumlah}}</td>
+                                                    <td>{{Carbon\Carbon::parse($mikrobiologi->tgl_produk)->translatedFormat('d F Y')}}</td>
                                                     <td>{{Carbon\Carbon::parse($mikrobiologi->tgl_inokulasi)->translatedFormat('d F Y')}}</td>
                                                     <td>{{Carbon\Carbon::parse($mikrobiologi->tgl_pengamatan)->translatedFormat('d F Y')}}</td>
                                                     <td align="center">
                                                         @if($mikrobiologi['statusOP'] == 0)
-                                                            <form action="/operator/mikrobiologi/ttd/{{$mikrobiologi['id']}}" method="POST" class="text-center">
+                                                            <form action="/operator/mikrobiologi_produk/ttd/{{$mikrobiologi['id']}}" method="POST" class="text-center">
                                                                 @csrf
                                                                 @method('PATCH')
                                                                 <button type="submit" class="btn btn-success btn" style="">TTD</button>
@@ -113,7 +116,7 @@
 
                                                     </td>
                                                     <td>
-                                                        <form action="{{route('mikrobiologi_Delete', $mikrobiologi['id'])}}" method="POST">
+                                                        <form action="{{route('mikrobiologi_produk_Delete', $mikrobiologi['id'])}}" method="POST">
                                                             @csrf 
                                                             {{-- @method('DELETE')  --}}
                                                             @method('PATCH') 
@@ -121,12 +124,12 @@
                                                             <button class="text-danger btn"><i class="fa-solid fa-trash"></i></button>
                                                             
                                                             <br>
-                                                            <a class="fa-solid fa-pen-to-square text-success btn" href="{{route('edit_mikrobiologi', $mikrobiologi->id)}}"></a>
+                                                            <a class="fa-solid fa-pen-to-square text-success btn" href="{{route('edit_mikrobiologi_produk', $mikrobiologi->id)}}"></a>
                                                             
                                                             <br>                                                   
-                                                            <a class="fa-solid fa-file-pdf ml-1 btn" target="_blank" href="{{route('operator_mikrobiologi_pdf', $mikrobiologi->id)}}"></a>
+                                                            <a class="fa-solid fa-file-pdf ml-1 btn" target="_blank" href="{{route('OP_mikrobiologi_produk_pdf', $mikrobiologi->id)}}"></a>
                                                             <br>
-                                                            <a href="{{ route('mikrobiologi_sampel', $mikrobiologi->id) }}" class="btn btn-icon icon-left btn-primary"><i class="fa-solid fa-table"></i> Data sampel</a>
+                                                            <a href="{{ route('mikrobiologi_produk_sampel', $mikrobiologi->id) }}" class="btn btn-icon icon-left btn-primary"><i class="fa-solid fa-table"></i> Data sampel</a>
                                                             
                                                         </form> 
 
@@ -140,7 +143,7 @@
                                             @endforelse
                                             
                                           </table>
-                                            {{-- {{ $mikrobiologi_produk->links('pagination::bootstrap-4') }} --}}
+                                            {{ $mikrobiologi_produk->links('pagination::bootstrap-4') }}
                                         </div>
                                 </div>
                             </div>

@@ -303,8 +303,7 @@ class MikrobiologiAirController extends Controller
 
     public function sampel_mikrobiologi_Destroy(Request $request, $id)
     {
-        // Sampel_mikrobiologi_air::where('id', '=', $id)->delete(); 
-        Mikrobiologi_air::where('id', '=', $id)->delete(); 
+        // Mikrobiologi_air::where('id', '=', $id)->delete(); 
         Sampel_mikrobiologi_air::where('id_mikrobiologi', '=', $id)->delete(); 
         return redirect()->back()->with('successDelete', 'Berhasil menghapus data sampel mikrobiologi!'); 
     } 

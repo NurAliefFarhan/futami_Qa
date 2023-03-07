@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data Analisa Mikrobiologi Air</title>
+    <title>History Analisa Mikrobiologi Produk</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
@@ -42,9 +42,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            {{-- <img class="animation__shake" src="{{asset('assets/template/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60"> --}}
-            <img class="animation__shake" src="{{asset('assets/img/futami bg.png')}}" alt="AdminLTELogo" height="120" width="120">
-
+            <img class="animation__shake" src="{{asset('assets/template/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
         </div>
 
         <!-- Navbar -->
@@ -54,12 +52,18 @@
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
+                {{-- <li class="nav-item d-none d-sm-inline-block">
+                    <a href="index3.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Contact</a>
+                </li> --}}
             </ul>
 
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                         <i class="fas fa-search"></i>
                     </a>
@@ -78,7 +82,7 @@
                             </div>
                         </form>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
@@ -170,11 +174,11 @@
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -191,7 +195,6 @@
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    {{-- <img alt="image" src="{{asset('assets/img/admin.jpg')}}" class="rounded-circle mr-1" style="width:40px; height:40px; border-radius:50%;"> --}}
                     <img alt="image" src="{{asset('assets/img/avatar_admin.png')}}" class="rounded-circle mr-1" style="width:40px; height:40px; border-radius:50%;">
 
                     <div class="info">
@@ -238,6 +241,7 @@
                                 </p>
                             </a>
                         </li>
+
                         <li class="nav-item" style="margin-top:70%;">
                             <a href="/logout" class="nav-link text-danger">
                                 <i class="fas fa-sign-out-alt"></i>
@@ -272,6 +276,7 @@
                                     {{Session::get('notAllowed')}} 
                                 </div>
                             @endif
+
                         </div>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -279,13 +284,13 @@
             <!-- /.content-header -->
 
         </div>
-        <div class="content-wrapper" style="margin-top: -43%;">
+        <div class="content-wrapper" style="margin-top: -42%;">
             <!-- Content Header (Page header) -->
             <section class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Data Analisa Mikrobiologi Air</h1>
+                        <h1>History Analisa Mikrobiologi Produk</h1>
                     </div>     
                 </div>
             </div><!-- /.container-fluid -->
@@ -293,45 +298,45 @@
 
             <!-- Main content -->
             <section class="content">
-            <div class="container-fluid" >
+            <div class="container-fluid">
                 <div class="row">
                 <div class="col-12">
-                    <div class="card p-4">
+                    <div class="card">
                         <div class="card-header">
-                            {{-- <h3 class="card-title">Data Analisa kimia</h3> --}}
-                            {{-- <br> --}}
-
-                            {{-- <button type="button" class="btn btn-danger btn-block btn-sm"><i class="fa fa-bell"></i> Back</button> --}}
-                            <a href="/admin" class="btn btn-danger btn-sm" style="width:auto; text-align:center;"><i class="fa fa-house"></i> Back</a>
-                            
-                            <a href="/superadmin/mikrobiologi/history" class="btn btn-primary btn-sm" style="width:auto; text-align:center; float:right;"><i class="fa fa-history"></i> History</a>
+                            <a href="/superadmin/mikrobiologi_produk/info" class="btn btn-danger" style="width:auto; text-align:center; ">Back</a>
 
                         </div>
                         <!-- /.card-header -->
-                        <div class="card-body shadow">
-                            <table id="example1" class="table-responsive table-bordered table-striped" style="margin-bottom:2%;">
+                        <div class="card-body">
+                            <table id="example1" class="table table-bordered table-striped" style="margin-bottom:2%;">
                                 <thead>
                                     <tr>
-                                        <th class="p-2">No</th>
-                                        <th class="p-2">No.Dokumen</th>
-                                        <th class="p-2">Tanggal Inokulasi</th>
-                                        <th class="p-2">Tanggal Pengamatan</th>
-                                        <th class="p-2">TTD Operator</th>
-                                        <th class="p-2">TTD Staff</th>
-                                        <th class="p-2">TTD Supervisor</th>
-                                        <th class="p-2">Action</th>
+                                        <th>No</th>
+                                        <th>No.Dokumen</th>
+                                        <th>Nama Produk</th>
+                                        <th>Jumlah Batch</th>
+                                        <th>Tanggal Produksi</th>
+                                        <th>Tanggal Inokulasi</th>
+                                        <th>Tanggal Pengamatan</th>
+                                        <th>TTD Operator</th>
+                                        <th>TTD Staff</th>
+                                        <th>TTD Supervisor</th>
+                                        {{-- <th>Action</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($mikrobiologi_airs as $mikrobiologi_air)
+                                    @forelse ($mikrobiologi_produks as $mikrobiologi_produk)
                                         <tr>
                                             <td>{{++$no}}</td>
-                                            <td>{{$mikrobiologi_air->nodokumen}}</td>
-                                            <td>{{Carbon\Carbon::parse($mikrobiologi_air->tgl_inokulasi)->translatedFormat('d F Y')}}</td>
-                                            <td>{{Carbon\Carbon::parse($mikrobiologi_air->tgl_pengamatan)->translatedFormat('d F Y')}}</td>                                            {{-- <td>{{Carbon\Carbon::parse($mikrobiologi_air->tanggal_uji)->translatedFormat('d F Y')}}</td> --}}
+                                            <td>{{$mikrobiologi_produk->nodokumen}}</td>
+                                            <td>{{$mikrobiologi_produk->nama_produk}}</td>
+                                            <td>{{$mikrobiologi_produk->jumlah}}</td>
+                                            <td>{{Carbon\Carbon::parse($mikrobiologi_produk->tgl_produk)->translatedFormat('d F Y')}}</td>
+                                            <td>{{Carbon\Carbon::parse($mikrobiologi_produk->tgl_inokulasi)->translatedFormat('d F Y')}}</td>
+                                            <td>{{Carbon\Carbon::parse($mikrobiologi_produk->tgl_pengamatan)->translatedFormat('d F Y')}}</td>                                            {{-- <td>{{Carbon\Carbon::parse($mikrobiologi_produk->tanggal_uji)->translatedFormat('d F Y')}}</td> --}}
                                             <td align="center">
-                                                @if($mikrobiologi_air['statusOP'] == 0)
-                                                    {{-- <form action="/operatorttd/{{$mikrobiologi_air['id']}}" method="POST">
+                                                @if($mikrobiologi_produk['statusOP'] == 0)
+                                                    {{-- <form action="/operatorttd/{{$mikrobiologi_produk['id']}}" method="POST">
                                                         @csrf
                                                         @method('PATCH')
                                                         <button type="submit" class="badge badge-success btn">TTD</button>
@@ -339,20 +344,20 @@
                                                     </form> --}}
                                                     Data Belum Ditandatangan
                                                 
-                                                @elseif($mikrobiologi_air['statusOP'] == 1)
-                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_air->user_id_OP ."_". $mikrobiologi_air->name_id_OP)) !!}" alt="">
+                                                @elseif($mikrobiologi_produk['statusOP'] == 1)
+                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_produk->user_id_OP ."_". $mikrobiologi_produk->name_id_OP)) !!}" alt="">
                                                 @endif
                                             </td>
                                             <td align="center">
-                                                @if($mikrobiologi_air['statusST'] == 0)
-                                                    {{-- <form action="/staffttd/{{$mikrobiologi_air['id']}}" method="POST">
+                                                @if($mikrobiologi_produk['statusST'] == 0)
+                                                    {{-- <form action="/staffttd/{{$mikrobiologi_produk['id']}}" method="POST">
                                                         @csrf
                                                         @method('PATCH')
                                                         <button type="submit" class="badge badge-success btn">TTD</button>
 
                                                     </form>
                                                 
-                                                    <form action="/declinettd/{{$mikrobiologi_air['id']}}" method="POST" style="margin-top:5%;">
+                                                    <form action="/declinettd/{{$mikrobiologi_produk['id']}}" method="POST" style="margin-top:5%;">
                                                         @csrf
                                                         @method('PATCH')
                                                         <button type="submit" class="badge badge-danger btn">Tolak</button>
@@ -362,17 +367,17 @@
                                                     Data Belum Ditandatangan
 
 
-                                                @elseif($mikrobiologi_air['statusST'] == 1)
-                                                    {{-- {!! QrCode::size(50)->generate($mikrobiologi_air->nodokumen) !!} --}}
-                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_air->user_id_ST ."_". $mikrobiologi_air->name_id_ST)) !!}" alt="">
+                                                @elseif($mikrobiologi_produk['statusST'] == 1)
+                                                    {{-- {!! QrCode::size(50)->generate($mikrobiologi_produk->nodokumen) !!} --}}
+                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_produk->user_id_ST ."_". $mikrobiologi_produk->name_id_ST)) !!}" alt="">
 
-                                                @elseif($mikrobiologi_air['statusST'] == 2)
-                                                    <div class="alert alert-danger">Data Ditolak</div>
+                                                @elseif($mikrobiologi_produk['statusST'] == 2)
+                                                    <div class="alert alert-danger">Ditolak</div>
                                                 @endif
                                             </td>
                                             <td align="center">
-                                                @if($mikrobiologi_air['statusSP'] == 0)
-                                                {{-- <form action="/supervisorttd/{{$mikrobiologi_air['id']}}" method="POST">
+                                                @if($mikrobiologi_produk['statusSP'] == 0)
+                                                {{-- <form action="/supervisorttd/{{$mikrobiologi_produk['id']}}" method="POST">
                                                     @csrf
                                                     @method('PATCH')
                                                     <button type="submit" class="badge badge-success btn">TTD</button>
@@ -380,26 +385,25 @@
                                                 </form> --}}
                                                 Data belum ditandatangan 
 
-                                              @elseif($mikrobiologi_air['statusSP'] == 1)
-                                                {{-- {!! QrCode::size(50)->generate($mikrobiologi_air->nodokumen) !!} --}}
-                                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_air->user_id_SP ."_". $mikrobiologi_air->name_id_SP)) !!}" alt="">
+                                            @elseif($mikrobiologi_produk['statusSP'] == 1)
+                                                {{-- {!! QrCode::size(50)->generate($mikrobiologi_produk->nodokumen) !!} --}}
+                                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_produk->user_id_SP ."_". $mikrobiologi_produk->name_id_SP)) !!}" alt="">
 
-                                              @endif
+                                            @endif
                                             </td>
-                                            <td>
-                                                <a class="fa-solid fa-file-pdf ml-1 btn" target="_blank" href="{{route('superadmin_mikrobiologi_pdf', $mikrobiologi_air->id)}}"></a>
+                                            {{-- <td>
+                                                <a class="fa-solid fa-file-pdf ml-1 btn" target="_blank" href="{{route('superadmin_mikrobiologi_pdf', $mikrobiologi_produk->id)}}"></a>
 
-                                                <a href="{{ route('superadmin_mikrobiologi_sampel', $mikrobiologi_air->id) }}" class="btn btn-icon icon-left btn-primary"><i class="fa-solid fa-table"></i> Data</a>
-                                            </td>
+                                                <a href="{{ route('superadmin_mikrobiologi_sampel', $mikrobiologi_produk->id) }}" class="btn btn-icon icon-left btn-primary"><i class="fa-solid fa-table"></i> Data</a>
+                                            </td> --}}
                                         </tr>
                                             @empty
                                             <tr>
-                                                <td class="text-center h5" colspan="8">Not Found</td>
+                                                <td class="text-center h5" colspan="10">Not Found</td>
                                             </tr>
                                     @endforelse
                                 </tbody>                                
                             </table>
-                            {{-- <a href="/admin" class="btn btn-danger" style="width:20%; text-align:center; margin-left:78%; margin-top:3%;">Back</a> --}}
                         </div>
                     <!-- /.card-body -->
                     </div>
@@ -413,7 +417,6 @@
             </section>
             <!-- /.content -->
         </div>
-
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
@@ -446,16 +449,13 @@
     <script src="{{asset('assets/template/plugins/moment/moment.min.js')}}"></script>
     <script src="{{asset('assets/template/plugins/daterangepicker/daterangepicker.js')}}"></script>
     <!-- Tempusdominus Bootstrap 4 -->
-    <script src="{{asset('assets/template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}">
-    </script>
+    <script src="{{asset('assets/template/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
     <!-- Summernote -->
     <script src="{{asset('assets/template/plugins/summernote/summernote-bs4.min.js')}}"></script>
     <!-- overlayScrollbars -->
     <script src="{{asset('assets/template/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('assets/template/dist/js/adminlte.js')}}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('assets/template/dist/js/demo.js')}}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{asset('assets/template/dist/js/pages/dashboard.js')}}"></script>
 
@@ -481,7 +481,7 @@
     <!-- AdminLTE App -->
     <script src="{{asset('assets/template/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('assets/template/dist/js/demo.js')}}"></script>
+    {{-- <script src="{{asset('assets/template/dist/js/demo.js')}}"></script> --}}
     <!-- Page specific script -->
     <script>
       $(function () {
@@ -538,4 +538,3 @@
     <script src="{{asset('assets/template/dist/js/pages/dashboard.js')}}"></script>
 </body>
 </html>
-

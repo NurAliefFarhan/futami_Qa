@@ -36,63 +36,74 @@
         <tr>
             <td colspan="2" align="center">
                 {{-- table kop surat --}}
-                <table width="100%"cellpadding="0" cellspacing="0">
+                <table width="100%" cellpadding="0" cellspacing="0">
                     <tr>
                         <td rowspan="4" colspan="" align="center">
                             {{-- logo futami  --}}
                             <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('assets/img/futami bg.png'))) }}" style="width: 4cm; ">
                         </td>
                         <td colspan="" align="center">PT FUTAMI FOOD & BEVERAGES</td>
-                        <td colspan="" align="center">Document No.</td>
-                        <td colspan="" align="center">:</td>
-                        <td colspan="" align="center">FFB/FRM/QA/18/17</td>
+                        <td colspan="" align="left">Document No.</td>
+                        <td colspan="" align="left">:</td>
+                        <td colspan="" align="left" style="border-left-style: hidden;">FFB/FRM/QA/18/17</td>
                     </tr>
                     <tr>
-                        <td colspan="" rowspan="2" align="center">FORMULIR</td>
-                        <td colspan="" align="center">Issued Date</td>
-                        <td colspan="" align="center">:</td>
-                        <td colspan="" align="center">18/05/2022</td>
+                        <td colspan="" rowspan="2" align="center" style="border-bottom-style: hidden;">FORMULIR</td>
+                        <td colspan="" align="left">Issued Date</td>
+                        <td colspan="" align="left">:</td>
+                        <td colspan="" align="left" style="border-left-style: hidden;">18/05/2022</td>
                     </tr>
                     <tr>
-                        <td colspan="" align="center">Revission No.</td>
-                        <td colspan="" align="center">:</td>
-                        <td colspan="" align="center">000</td>
+                        <td colspan="" align="left">Revission No.</td>
+                        <td colspan="" align="left">:</td>
+                        <td colspan="" align="left" style="border-left-style: hidden;">000</td>
                     </tr>
                     <tr>
                         <td colspan="" align="center">LAPORAN ANALISA KIMIA</td>
-                        <td colspan="" align="center">Page</td>
-                        <td colspan="" align="center">:</td>
-                        <td colspan="" align="center">1 of 1</td>
+                        <td colspan="" align="left">Page</td>
+                        <td colspan="" align="left">:</td>
+                        <td colspan="" align="left" style="border-left-style: hidden;">1 of 1</td>
                     </tr>
                 </table>
             </td>
         </tr>
         <tr>
-            <td>
+            <td style="border-rigth-style:hidden;">
                 {{-- table dokumen kiri --}}
-                <table
-                    style="width:100%; height:90px; border:none; border-style:none; border-right-style:none; border-top-style:none; border-bottom-style:none;">
+                <table style="width:100%; height:90px; border:none; border-style:none; border-right-style:hidden;">
                     <tr style="border:none; border-right-style:none; ">
                         <td style="border:none; border-right-style:none;">No. Dokumen</td>
                         <td style="border:none; border-right-style:none;"> : </td>
-                        <td style="border:none; border-right-style:none;">{{ $futami->nodokumen }}</td>
+                        <td style="border-left-style:none; border-right-style:hidden; border-top-style:none;">{{ $futami->nodokumen }}</td>
                     </tr>
                     <tr style="border:none;">
                         <td style="border:none;">Pemberi sampel</td>
                         <td style="border:none;"> : </td>
-                        <td style="border:none;">{{ $futami->pemberi_sampel }}</td>
+                        <td style="border-left-style:none; border-right-style:hidden; border-top-style:none;">{{ $futami->pemberi_sampel }}</td>
                     </tr>
-                    <tr style="border:none;">
+                    {{-- <tr style="border:none;">
                         <td style="border:none;">Parameter pengujian</td>
                         <td style="border:none;"> : </td>
-                        <td style="border:none;">{{ $futami->parameter_pengujian }}</td>
+                        <td style="border-left-style:none; border-right-style:hidden; border-top-style:none;">{{ $futami->parameter_pengujian }}</td>
+                    </tr> --}}
+                    {{-- <tr style="border:none;">
+                        <td style="border:none;"> </td>
+                        <td style="border:none;"> </td>
+                        <td style="border-left-style:none; border-right-style:hidden;"> </td>
+                    </tr>  --}} 
+                    <tr style="border:none;">
+                        <td style="border:none;">Parameter Pengujian</td>
+                        <td style="border:none;"> : </td>
+                        <td style="border-left-style:none; border-right-style:hidden; border-top-style:none;">{{ $futami->parameter_pengujian }}</td>
                     </tr>
                     <tr style="border:none;">
-                        <td style="border:none;"> </td>
-                        <td style="border:none;"> </td>
-                        <td style="border:none;"> </td>
+                        <td style="border:none; border-bottom-style:none; border-top-style:none;"> </td>
+                        <td style="border:none; border-bottom-style:none; border-top-style:none;"> </td>
+                        <td style="border:none; border-left-style:none; border-right-style:hidden; border-top-style:none;"> </td>
                     </tr>
-                    <tr style="border:none;">
+                    
+                    
+                    {{-- <tr style="border:none;">
                         <td style="border:none;"></td>
                         <td style="border:none;"></td>
                         <td style="border:none;"></td>
@@ -101,32 +112,30 @@
                         <td style="border:none;"> </td>
                         <td style="border:none;"> </td>
                         <td style="border:none;"> </td>
-                    </tr>
+                    </tr> --}}
                 </table>
             </td>
-            <td>
+            <td style="border-left-style:hidden;">
                 {{-- table tanggal kanan --}}
-                <table
-                    style="width:100%; border:none; border:none; border-style:none; border-left-style:none; border-left-style:none; border-top-style:none; border-bottom-style:none;">
-                    <tr style="border:none; border-left-style:none; ">
-                        <td style="border:none; border-left-style:none; ">Tanggal terima sampel</td>
+                <table style="width:100%; border:none; border-style:none; border-left-style:hidden; border-top-style:none; padding-left:30px;">
+                    <tr style="border:none; ">
+                        <td style="border:none; border-left-style:hidden; ">Tanggal terima sampel</td>
                         <td style="border:none; border-left-style:none; "> : </td>
                         {{-- <td style="border:none; border-left-style:none; ">{{$futami->tanggal_terima}}</td> --}}
-                        <td style="border:none; border-left-style:none; ">
+                        <td style="border-left-style:none; border-right-style:hidden; border-top-style:none; border-left-style:none; ">
                             {{ Carbon\Carbon::parse($futami->tanggal_terima)->translatedFormat('d-m-Y') }}
                         </td>
-
                     </tr>
                     <tr style="border:none;">
                         <td style="border:none;">Jumlah Sampel</td>
                         <td style="border:none;"> : </td>
-                        <td style="border:none;">{{ $futami->jumlah_sampel }}</td>
+                        <td style="border-left-style:none; border-right-style:hidden; border-top-style:none;">{{ $futami->jumlah_sampel }}</td>
                     </tr>
                     <tr style="border:none;">
                         <td style="border:none;">Tanggal uji</td>
                         <td style="border:none;"> : </td>
                         {{-- <td style="border:none;">{{$futami->tanggal_uji}}</td> --}}
-                        <td style="border:none; border-left-style:none; ">
+                        <td style="border-left-style:none; border-right-style:hidden; border-top-style:none;">
                             {{ Carbon\Carbon::parse($futami->tanggal_uji)->translatedFormat('d-m-Y') }}
                         </td>
                     </tr>
@@ -134,7 +143,7 @@
                         <td style="border:none;">Tanggal selesai uji</td>
                         <td style="border:none;"> : </td>
                         {{-- <td style="border:none;">{{$futami->tanggal_selesai}}</td> --}}
-                        <td style="border:none; border-left-style:none; ">
+                        <td style="border-left-style:none; border-right-style:hidden; border-top-style:none;">
                             {{ Carbon\Carbon::parse($futami->tanggal_selesai)->translatedFormat('d-m-Y') }}
                         </td>
                     </tr>
@@ -204,26 +213,23 @@
 
 
                 {{-- table kop surat --}}
-                <table align="right" width="60%" cellpadding="0" cellspacing="0"
-                    style=" border:none; border-style:none; border-left-style:none; border-right-style:none; border-top-style:none; border-bottom-style:none;">
+                <table align="right" width="60%" cellpadding="0" cellspacing="0" style="border:none; border-style:none; border-left-style:none; border-right-style:none; border-top-style:none; border-bottom-style:none; position:fixed bottom;">
                     <tr style="border-left-style: hidden; border-right-style:hidden;">
-                        <td style="border-top-style:none; border-right-style:none; border-left-style:none;"
-                            rowspan="6" align="center"></td>
-                        <td style="border-top-style:none; border-left-style:none;" colspan="" align="center">
-                        </td>
-                        <td colspan="" align="center">Dibuat oleh</td>
-                        <td colspan="" align="center">Diperiksa oleh</td>
-                        <td colspan="" align="center">Disetujui oleh</td>
+                        <td style="border-top-style:none; border-right-style:none; border-left-style:none;" rowspan="6" align="center"></td>
+                        <td style="border-top-style:none; border-left-style:none;" colspan="" align="center"> </td>
+                        <td colspan="" align="center" style="width: 35mm;">Dibuat oleh</td>
+                        <td colspan="" align="center" style="width: 35mm;">Diperiksa oleh</td>
+                        <td colspan="" align="center" style="width: 35mm;">Disetujui oleh</td>
                     </tr>
                     <tr style="border-left-style: hidden; border-right-style:hidden;">
-                        <td rowspan="2" align="center">Tanda tangan</td>
+                        <td rowspan="2" align="center" style="width: 18mm; height:12mm;">Tanda tangan</td>
                         <td rowspan="2" align="center">
                             @if ($futami['statusOP'] == 0)
                                 Belum ditandatangani
                             @elseif($futami['statusOP'] == 1)
                             
-                            {{-- {!! (QrCode::size(80)->generate($futami->user_id_OP . '_' . $futami->name_id_OP)) !!} --}}
-                            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_OP .'_'. $futami->name_id_OP)) !!}" alt="">                            
+                            {{-- {!! (QrCode::size(37/26)->generate($futami->user_id_OP . '_' . $futami->name_id_OP)) !!} --}}
+                            <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(37)->generate($futami->user_id_OP .'_'. $futami->name_id_OP)) !!}" alt="">                            
                             @endif
                         </td>
                         <td rowspan="2" align="center">
@@ -231,7 +237,7 @@
                                 Belum ditandatangani
                             @elseif($futami['statusST'] == 1)
                                 {{-- {!! QrCode::size(80)->generate($futami->user_id_ST . '_' . $futami->name_id_ST) !!} --}}
-                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_ST .'_'. $futami->name_id_ST)) !!}" alt="">
+                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(37)->generate($futami->user_id_ST .'_'. $futami->name_id_ST)) !!}" alt="">
                             @elseif ($futami['statusST'] == 2)
                                 Ditolak
                             @endif
@@ -240,8 +246,8 @@
                             @if ($futami['statusSP'] == 0)
                                 Belum ditandatangani
                             @elseif($futami['statusSP'] == 1)
-                                {{-- {!! QrCode::size(80)->generate($futami->user_id_SP . '_' . $futami->name_id_SP) !!} --}}
-                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($futami->user_id_SP .'_'. $futami->name_id_SP)) !!}" alt="">                            
+                                {{-- {!! QrCode::size(37)->generate($futami->user_id_SP . '_' . $futami->name_id_SP) !!} --}}
+                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(37)->generate($futami->user_id_SP .'_'. $futami->name_id_SP)) !!}" alt="">                            
                             @endif
                         </td>
                     </tr>
@@ -249,13 +255,13 @@
                         <td></td>
                     </tr>
                     <tr style="border-left-style: hidden; border-right-style:hidden;">
-                        <td colspan="" align="center">Jabatan</td>
+                        <td colspan="" align="center" style="height: 6mm;">Jabatan</td>
                         <td colspan="" align="center">QA Lab. Technician</td>
                         <td colspan="" align="center">QA Staff</td>
                         <td colspan="" align="center">QA Supervisor</td>
                     </tr>
                     <tr style="border-left-style: hidden; border-right-style:hidden;">
-                        <td colspan="" align="center">Nama</td>
+                        <td colspan="" align="center" style="height: 6mm;">Nama</td>
                         <td colspan="" align="center">
                             @if ($futami->name_id_OP == null)
                                 Belum dibaca
@@ -282,12 +288,11 @@
                         </td>
                     </tr>
                     <tr style="border-left-style: hidden; border-right-style:hidden;">
-                        <td colspan="" align="center">Tanggal</td>
+                        <td colspan="" align="center" style="height:6mm;">Tanggal</td>
                         <td colspan="" align="center">
                             @if ($futami->created_at_OP == null)
                                 Data kosong
                             @else
-                                ()
                                 {{ Carbon\Carbon::parse($futami->created_at_OP)->translatedFormat('d F Y') }}
                             @endif
                         </td>
@@ -304,12 +309,11 @@
                             @if ($futami->created_at_SP == null)
                                 Data kosong
                             @else
-                                ()
                                 {{ Carbon\Carbon::parse($futami->created_at_SP)->translatedFormat('d F Y') }}
                             @endif
                         </td>
                     </tr>
-                </table>
+                </table> 
             </td>
         </tr>
         {{-- <tr>

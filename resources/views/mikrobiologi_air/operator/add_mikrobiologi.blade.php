@@ -111,7 +111,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    {{-- </div>
     <footer class="main-footer">
         <div class="footer-left">
             Futami Operator
@@ -119,7 +119,7 @@
         <div class="footer-right">
 
         </div>
-    </footer>
+    </footer> --}}
 </div>
 </div>
 

@@ -69,7 +69,7 @@
         
         <pre style="font-family: Times New Roman; text-align: left;">
             No. Dokumen               : {{ $mikrobiologi_airs->nodokumen }}
-            Tanggal Inokulasi         : {{ $mikrobiologi_airs->tgl_inokulasi }}
+            Tanggal Inokulasi   : {{Carbon\Carbon::parse($mikrobiologi_airs->tgl_inokulasi)->translatedFormat('d F Y')}}
             Tanggal Pengamatan   : {{Carbon\Carbon::parse($mikrobiologi_airs->tgl_pengamatan)->translatedFormat('d F Y')}}
         </pre>
                 
@@ -166,7 +166,7 @@
                 <td colspan="" align="center">
                   @if ($mikrobiologi_airs->created_at_OP == null)
                       Data kosong
-                  @else ()
+                  @else 
                       {{Carbon\Carbon::parse($mikrobiologi_airs->created_at_OP)->translatedFormat('d F Y')}}
                   @endif
                 </td>
@@ -182,7 +182,7 @@
                 <td colspan="" align="center">
                   @if ($mikrobiologi_airs->created_at_SP == null)
                       Data kosong
-                  @else ()
+                  @else 
                       {{Carbon\Carbon::parse($mikrobiologi_airs->created_at_SP)->translatedFormat('d F Y')}}
                   @endif
                 </td>

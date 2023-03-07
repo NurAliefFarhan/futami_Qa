@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data Analisa Mikrobiologi Air</title>
+    <title>Data Analisa Mikrobiologi Produk</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
@@ -59,7 +59,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                         <i class="fas fa-search"></i>
                     </a>
@@ -78,7 +78,7 @@
                             </div>
                         </form>
                     </div>
-                </li>
+                </li> --}}
 
                 <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
@@ -170,11 +170,11 @@
                         <i class="fas fa-expand-arrows-alt"></i>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
                         <i class="fas fa-th-large"></i>
                     </a>
-                </li>
+                </li> --}}
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -285,7 +285,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Data Analisa Mikrobiologi Air</h1>
+                        <h1>Data Analisa Mikrobiologi Produk</h1>
                     </div>     
                 </div>
             </div><!-- /.container-fluid -->
@@ -304,7 +304,7 @@
                             {{-- <button type="button" class="btn btn-danger btn-block btn-sm"><i class="fa fa-bell"></i> Back</button> --}}
                             <a href="/admin" class="btn btn-danger btn-sm" style="width:auto; text-align:center;"><i class="fa fa-house"></i> Back</a>
                             
-                            <a href="/superadmin/mikrobiologi/history" class="btn btn-primary btn-sm" style="width:auto; text-align:center; float:right;"><i class="fa fa-history"></i> History</a>
+                            <a href="/superadmin/mikrobiologi_produk/history" class="btn btn-primary btn-sm" style="width:auto; text-align:center; float:right;"><i class="fa fa-history"></i> History</a>
 
                         </div>
                         <!-- /.card-header -->
@@ -314,6 +314,9 @@
                                     <tr>
                                         <th class="p-2">No</th>
                                         <th class="p-2">No.Dokumen</th>
+                                        <th class="p-2">Nama Produk</th>
+                                        <th class="p-2">Jumlah Batch</th>
+                                        <th class="p-2">Tanggal Produksi</th>
                                         <th class="p-2">Tanggal Inokulasi</th>
                                         <th class="p-2">Tanggal Pengamatan</th>
                                         <th class="p-2">TTD Operator</th>
@@ -323,15 +326,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($mikrobiologi_airs as $mikrobiologi_air)
+                                    @forelse ($mikrobiologi_produks as $mikrobiologi_produk)
                                         <tr>
-                                            <td>{{++$no}}</td>
-                                            <td>{{$mikrobiologi_air->nodokumen}}</td>
-                                            <td>{{Carbon\Carbon::parse($mikrobiologi_air->tgl_inokulasi)->translatedFormat('d F Y')}}</td>
-                                            <td>{{Carbon\Carbon::parse($mikrobiologi_air->tgl_pengamatan)->translatedFormat('d F Y')}}</td>                                            {{-- <td>{{Carbon\Carbon::parse($mikrobiologi_air->tanggal_uji)->translatedFormat('d F Y')}}</td> --}}
+                                            <td align="center">{{++$no}}</td>
+                                            <td>{{$mikrobiologi_produk->nodokumen}}</td>
+                                            <td>{{$mikrobiologi_produk->nama_produk}}</td>
+                                            <td>{{$mikrobiologi_produk->jumlah}}</td>
+                                            <td>{{Carbon\Carbon::parse($mikrobiologi_produk->tgl_produk)->translatedFormat('d F Y')}}</td>
+                                            <td>{{Carbon\Carbon::parse($mikrobiologi_produk->tgl_inokulasi)->translatedFormat('d F Y')}}</td>
+                                            <td>{{Carbon\Carbon::parse($mikrobiologi_produk->tgl_pengamatan)->translatedFormat('d F Y')}}</td>                                            {{-- <td>{{Carbon\Carbon::parse($mikrobiologi_produk->tanggal_uji)->translatedFormat('d F Y')}}</td> --}}
                                             <td align="center">
-                                                @if($mikrobiologi_air['statusOP'] == 0)
-                                                    {{-- <form action="/operatorttd/{{$mikrobiologi_air['id']}}" method="POST">
+                                                @if($mikrobiologi_produk['statusOP'] == 0)
+                                                    {{-- <form action="/operatorttd/{{$mikrobiologi_produk['id']}}" method="POST">
                                                         @csrf
                                                         @method('PATCH')
                                                         <button type="submit" class="badge badge-success btn">TTD</button>
@@ -339,20 +345,20 @@
                                                     </form> --}}
                                                     Data Belum Ditandatangan
                                                 
-                                                @elseif($mikrobiologi_air['statusOP'] == 1)
-                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_air->user_id_OP ."_". $mikrobiologi_air->name_id_OP)) !!}" alt="">
+                                                @elseif($mikrobiologi_produk['statusOP'] == 1)
+                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_produk->user_id_OP ."_". $mikrobiologi_produk->name_id_OP)) !!}" alt="">
                                                 @endif
                                             </td>
                                             <td align="center">
-                                                @if($mikrobiologi_air['statusST'] == 0)
-                                                    {{-- <form action="/staffttd/{{$mikrobiologi_air['id']}}" method="POST">
+                                                @if($mikrobiologi_produk['statusST'] == 0)
+                                                    {{-- <form action="/staffttd/{{$mikrobiologi_produk['id']}}" method="POST">
                                                         @csrf
                                                         @method('PATCH')
                                                         <button type="submit" class="badge badge-success btn">TTD</button>
 
                                                     </form>
                                                 
-                                                    <form action="/declinettd/{{$mikrobiologi_air['id']}}" method="POST" style="margin-top:5%;">
+                                                    <form action="/declinettd/{{$mikrobiologi_produk['id']}}" method="POST" style="margin-top:5%;">
                                                         @csrf
                                                         @method('PATCH')
                                                         <button type="submit" class="badge badge-danger btn">Tolak</button>
@@ -362,17 +368,17 @@
                                                     Data Belum Ditandatangan
 
 
-                                                @elseif($mikrobiologi_air['statusST'] == 1)
-                                                    {{-- {!! QrCode::size(50)->generate($mikrobiologi_air->nodokumen) !!} --}}
-                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_air->user_id_ST ."_". $mikrobiologi_air->name_id_ST)) !!}" alt="">
+                                                @elseif($mikrobiologi_produk['statusST'] == 1)
+                                                    {{-- {!! QrCode::size(50)->generate($mikrobiologi_produk->nodokumen) !!} --}}
+                                                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_produk->user_id_ST ."_". $mikrobiologi_produk->name_id_ST)) !!}" alt="">
 
-                                                @elseif($mikrobiologi_air['statusST'] == 2)
-                                                    <div class="alert alert-danger">Data Ditolak</div>
+                                                @elseif($mikrobiologi_produk['statusST'] == 2)
+                                                    <div class="alert alert-danger">Ditolak</div>
                                                 @endif
                                             </td>
                                             <td align="center">
-                                                @if($mikrobiologi_air['statusSP'] == 0)
-                                                {{-- <form action="/supervisorttd/{{$mikrobiologi_air['id']}}" method="POST">
+                                                @if($mikrobiologi_produk['statusSP'] == 0)
+                                                {{-- <form action="/supervisorttd/{{$mikrobiologi_produk['id']}}" method="POST">
                                                     @csrf
                                                     @method('PATCH')
                                                     <button type="submit" class="badge badge-success btn">TTD</button>
@@ -380,16 +386,16 @@
                                                 </form> --}}
                                                 Data belum ditandatangan 
 
-                                              @elseif($mikrobiologi_air['statusSP'] == 1)
-                                                {{-- {!! QrCode::size(50)->generate($mikrobiologi_air->nodokumen) !!} --}}
-                                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_air->user_id_SP ."_". $mikrobiologi_air->name_id_SP)) !!}" alt="">
+                                              @elseif($mikrobiologi_produk['statusSP'] == 1)
+                                                {{-- {!! QrCode::size(50)->generate($mikrobiologi_produk->nodokumen) !!} --}}
+                                                <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(80)->generate($mikrobiologi_produk->user_id_SP ."_". $mikrobiologi_produk->name_id_SP)) !!}" alt="">
 
                                               @endif
                                             </td>
                                             <td>
-                                                <a class="fa-solid fa-file-pdf ml-1 btn" target="_blank" href="{{route('superadmin_mikrobiologi_pdf', $mikrobiologi_air->id)}}"></a>
+                                                <a class="fa-solid fa-file-pdf ml-1 btn" target="_blank" href="{{route('SA_mikrobiologi_produk_pdf', $mikrobiologi_produk->id)}}"></a>
 
-                                                <a href="{{ route('superadmin_mikrobiologi_sampel', $mikrobiologi_air->id) }}" class="btn btn-icon icon-left btn-primary"><i class="fa-solid fa-table"></i> Data</a>
+                                                <a href="{{ route('superadmin_mikrobiologi_produk_sampel', $mikrobiologi_produk->id) }}" class="btn btn-icon icon-left btn-primary"><i class="fa-solid fa-table"></i> Data</a>
                                             </td>
                                         </tr>
                                             @empty
@@ -455,7 +461,7 @@
     <!-- AdminLTE App -->
     <script src="{{asset('assets/template/dist/js/adminlte.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('assets/template/dist/js/demo.js')}}"></script>
+    {{-- <script src="{{asset('assets/template/dist/js/demo.js')}}"></script> --}}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{asset('assets/template/dist/js/pages/dashboard.js')}}"></script>
 
@@ -481,7 +487,7 @@
     <!-- AdminLTE App -->
     <script src="{{asset('assets/template/dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('assets/template/dist/js/demo.js')}}"></script>
+    {{-- <script src="{{asset('assets/template/dist/js/demo.js')}}"></script> --}}
     <!-- Page specific script -->
     <script>
       $(function () {

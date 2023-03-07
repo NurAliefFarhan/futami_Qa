@@ -6,8 +6,8 @@ use App\Models\Sampel_mikrobiologi_air;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User; 
-use App\Models\Futami_sampel_kimia; 
-
+use App\Models\Futami_sampel_kimia;
+use App\Models\Sampel_mikrobiologi_produk;
 
 class UserSeeder extends Seeder
 {
@@ -18,8 +18,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $sampel = new Sampel_mikrobiologi_air();
         $sampel = new Futami_sampel_kimia();
+        $sampel = new Sampel_mikrobiologi_air();
+        $sampel = new Sampel_mikrobiologi_produk();
         $user = new User(); 
 
         User::create([

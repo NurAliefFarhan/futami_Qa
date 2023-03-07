@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Futami_sampel_kimia;
 use App\Models\Mikrobiologi_air;
+use App\Models\Mikrobiologi_produk;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -25,7 +26,8 @@ class SuperadminController extends Controller
     {
         $futamis = Futami::all();   
         $mikrobiologi_airs = Mikrobiologi_air::all();   
-        return view('admin.admin', compact('futamis', 'mikrobiologi_airs'));
+        $mikrobiologi_produks = Mikrobiologi_produk::all();   
+        return view('admin.admin', compact('futamis', 'mikrobiologi_airs', 'mikrobiologi_produks'));
     }
 
     public function role()

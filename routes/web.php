@@ -194,47 +194,43 @@ Route::middleware('isLogin', 'cekRole:operator')->prefix('/operator')->group(fun
     Route::get('/add_mikrobiologi_produk', [MikrobiologiProdukController::class, 'add_mikrobiologi_produk'])->name('add_mikrobiologi_produk');
     Route::post('/add_mikrobiologi_produk', [MikrobiologiProdukController::class, 'input_mikrobiologi_produk'])->name('mikrobiologi_produk.post');
     Route::get('/sampel_mikrobiologi_produk/{id}', [MikrobiologiProdukController::class, 'sampel_mikrobiologi_produk'])->name('sampel_mikrobiologi_produk');
-    Route::post('/operator/sampel_mikrobiologi/{id}', [MikrobiologiProdukController::class, 'input_sampel_mikrobiologi'])->name('sampel_mikrobiologi.post');
-    // Route::patch('/operator/mikrobiologi/ttd/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_operatorttd'])->name('mikrobiologi_operatorttd');  
-    // Route::get('/operator/mikrobiologi/sampel/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_sampel'])->name('mikrobiologi_sampel');
-    // Route::get('/operator/mikrobiologi/edit/{id}', [MikrobiologiProdukController::class, 'edit_mikrobiologi'])->name('edit_mikrobiologi');
-    // Route::patch('/operator/mikrobiologi/edit/{id}', [MikrobiologiProdukController::class, 'update_mikrobiologi'])->name('update_mikrobiologi.post');    
-    // Route::patch('/operator/mikrobiologi/Delete/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_Destroy'])->name('mikrobiologi_Delete'); //route untuk btn delete todo index 
-    // Route::delete('/operator/mikrobiologi/sampelDelete/{id}', [MikrobiologiProdukController::class, 'sampel_mikrobiologi_Destroy'])->name('sampel_mikrobiologi_Delete'); //route untuk btn delete todo index 
-    // Route::get('/operator/mikrobiologi/pdf/{id}', [MikrobiologiProdukController::class, 'operator_mikrobiologi_pdf'])->name('operator_mikrobiologi_pdf');
-    // Route::get('/operator/mikrobiologi/history', [MikrobiologiProdukController::class, 'mikrobiologi_history'])->name('mikrobiologi_history');
+    Route::post('/sampel_mikrobiologi_produk/{id}', [MikrobiologiProdukController::class, 'input_sampel_mikrobiologi_produk'])->name('sampel_mikrobiologi_produk.post');
+    Route::patch('/mikrobiologi_produk/ttd/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_produk_operatorttd'])->name('mikrobiologi_produk_operatorttd');  
+    Route::patch('/mikrobiologi_produk/Delete/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_produk_Destroy'])->name('mikrobiologi_produk_Delete'); //route untuk btn delete todo index 
+    Route::get('/mikrobiologi_produk/history', [MikrobiologiProdukController::class, 'mikrobiologi_produk_history'])->name('mikrobiologi_produk_history');
+    Route::get('/mikrobiologi_produk/sampel/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_produk_sampel'])->name('mikrobiologi_produk_sampel');
+    Route::delete('/mikrobiologi_produk/sampelDelete/{id}', [MikrobiologiProdukController::class, 'sampel_mikrobiologi_produk_Destroy'])->name('sampel_mikrobiologi_produk_Delete'); //route untuk btn delete todo index 
+    Route::get('/mikrobiologi_produk/edit/{id}', [MikrobiologiProdukController::class, 'edit_mikrobiologi_produk'])->name('edit_mikrobiologi_produk');
+    Route::patch('/mikrobiologi/edit/{id}', [MikrobiologiProdukController::class, 'update_mikrobiologi_produk'])->name('update_mikrobiologi_produk.post');    
+    Route::get('/mikrobiologi_produk/pdf/{id}', [MikrobiologiProdukController::class, 'OP_mikrobiologi_produk_pdf'])->name('OP_mikrobiologi_produk_pdf');
 
-
-
-    // //Route Staff 
-    // Route::get('/staff/mikrobiologi', [MikrobiologiAirController::class, 'staff_mikrobiologi'])->name('staff_mikrobiologi');
-    // Route::patch('/staff/mikrobiologi/ttd/{id}', [MikrobiologiAirController::class, 'mikrobiologi_staffttd'])->name('mikrobiologi_staffttd');  
-    // Route::patch('/staff/mikrobiologi/declinettd/{id}', [MikrobiologiAirController::class, 'mikrobiologi_staff_declinettd'])->name('mikrobiologi_staff_declinettd');  
-    // Route::get('/staff/mikrobiologi/pdf/{id}', [MikrobiologiAirController::class, 'staff_mikrobiologi_pdf'])->name('staff_mikrobiologi_pdf');
-
-
-
-
-    //Route Supervisor 
-    // Route::get('/supervisor/mikrobiologi', [MikrobiologiAirController::class, 'supervisor_mikrobiologi'])->name('supervisor_mikrobiologi');
-    // Route::patch('/supervisor/mikrobiologi/ttd/{id}', [MikrobiologiAirController::class, 'mikrobiologi_supervisorttd'])->name('mikrobiologi_supervisorttd');  
-    // Route::get('/supervisor/mikrobiologi/pdf/{id}', [MikrobiologiAirController::class, 'supervisor_mikrobiologi_pdf'])->name('supervisor_mikrobiologi_pdf');
-     
-
-
-
-
-    //Route Superadmin 
-    // Route::get('/superadmin/mikrobiologi/info', [MikrobiologiAirController::class, 'superadmin_mikrobiologi'])->name('superadmin_mikrobiologi');
-    // Route::get('/superadmin/mikrobiologi/sampel/{id}', [MikrobiologiAirController::class, 'superadmin_mikrobiologi_sampel'])->name('superadmin_mikrobiologi_sampel');
-    // Route::get('/superadmin/mikrobiologi/pdf/{id}', [MikrobiologiAirController::class, 'superadmin_mikrobiologi_pdf'])->name('superadmin_mikrobiologi_pdf');
-    // Route::get('/superadmin/mikrobiologi/history', [MikrobiologiAirController::class, 'superadmin_mikrobiologi_history'])->name('superadmin_mikrobiologi_history');
 
 });
 
+Route::middleware('isLogin', 'cekRole:staff')->prefix('/staff')->group(function () {
+    //Route Staff 
+    Route::get('/mikrobiologi_produk', [MikrobiologiProdukController::class, 'staff_mikrobiologi_produk'])->name('staff_mikrobiologi_produk');
+    Route::patch('/mikrobiologi_produk/ttd/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_produk_staffttd'])->name('mikrobiologi_produk_staffttd');  
+    Route::patch('/mikrobiologi_produk/declinettd/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_produk_declinettd'])->name('mikrobiologi_produk_declinettd');  
+    Route::get('/mikrobiologi_produk/pdf/{id}', [MikrobiologiProdukController::class, 'ST_mikrobiologi_produk_pdf'])->name('ST_mikrobiologi_produk_pdf');
 
+});
+Route::middleware('isLogin', 'cekRole:supervisor')->prefix('/supervisor')->group(function () {
+    //Route Supervisor 
+    Route::get('/mikrobiologi_produk', [MikrobiologiProdukController::class, 'supervisor_mikrobiologi_produk'])->name('supervisor_mikrobiologi_produk');
+    Route::patch('/mikrobiologi_produk/ttd/{id}', [MikrobiologiProdukController::class, 'mikrobiologi_produk_supervisorttd'])->name('mikrobiologi_produk_supervisorttd');  
+    Route::get('/mikrobiologi_produk/pdf/{id}', [MikrobiologiProdukController::class, 'SP_mikrobiologi_produk_pdf'])->name('SP_mikrobiologi_produk_pdf');
+     
 
+});
+Route::middleware('isLogin', 'cekRole:superadmin')->prefix('/superadmin')->group(function () {
+    //Route Superadmin 
+    Route::get('/mikrobiologi_produk/info', [MikrobiologiProdukController::class, 'superadmin_mikrobiologi_produk'])->name('superadmin_mikrobiologi_produk');
+    Route::get('/mikrobiologi_produk/sampel/{id}', [MikrobiologiProdukController::class, 'superadmin_mikrobiologi_produk_sampel'])->name('superadmin_mikrobiologi_produk_sampel');
+    Route::get('/mikrobiologi_produk/history', [MikrobiologiProdukController::class, 'superadmin_mikrobiologi_produk_history'])->name('superadmin_mikrobiologi_produk_history');
+    Route::get('/mikrobiologi_produk/pdf/{id}', [MikrobiologiProdukController::class, 'SA_mikrobiologi_produk_pdf'])->name('SA_mikrobiologi_produk_pdf');
 
+});
 
 
 
