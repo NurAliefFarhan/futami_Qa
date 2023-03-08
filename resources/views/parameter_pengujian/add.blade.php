@@ -84,127 +84,123 @@
 
 
 
-                    <div class="section-body">
+                    <div class="section-body" style="margin-top: -20px;">
                         <h2 class="section-title">Tambah Data Parameter Pengujian</h2>
-
                         <div class="row">
                             <div class="col-12">
-                                <div class="card">
-                                    <div class="card">
-                                        <form action="{{ route('parameter.post') }}" method="POST">
-                                            @csrf
+                                <div class="card shadow">
+                                    <form action="{{ route('parameter.post') }}" method="POST">
+                                        @csrf
 
-                                            <div class="card-body">
-                                                <div class="form-row">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="nama_parameter">Nama Parameter</label>
-                                                        <input type="string" name="nama_parameter" class="form-control" id="nama_parameter" placeholder="Masukkan Nama Parameter">
-                                                    </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="catatan">Catatan</label>
-                                                        <input type="string" name="catatan" class="form-control" id="catatan" placeholder="Catatan (optional)">
-                                                    </div>
+                                        <div class="card-body">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="nama_parameter">Nama Parameter</label>
+                                                    <input type="string" name="nama_parameter" class="form-control" id="nama_parameter" placeholder="Masukkan Nama Parameter">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="catatan">Catatan</label>
+                                                    <input type="string" name="catatan" class="form-control" id="catatan" placeholder="Catatan (optional)">
                                                 </div>
                                             </div>
-                                            <div class="card-footer">
-                                                <button class="btn btn-success" style="width:30%; text-align:center; margin-left:70%; margin-top:-2%;">Simpan Data</button>
-                                                <a href="/operator/data" class="btn btn-primary" style="width:30%; text-align:center; margin-top:-5%;">Back</a>
+                                        </div>
+                                        <div class="card-footer" style="margin-top:-10px;">
+                                            <button class="btn btn-success" style="width:30%; text-align:center; margin-left:70%; margin-top:-2%;">Simpan Data</button>
+                                            <a href="/operator/data" class="btn btn-primary" style="width:30%; text-align:center; margin-top:-5%;">Back</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="section-body">
+                        <h2 class="section-title">Data Parameter Pengujian</h2>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card shadow">
+                            
+                                    {{-- @if(Session::get('successAdd'))
+                                        <div class="alert alert-success w-70">
+                                            {{Session::get('successAdd')}} 
+                                        </div>
+                                    @endif --}}
+        
+                                    @if(Session::get('successDelete'))
+                                        <div class="alert alert-danger w-70">
+                                            {{Session::get('successDelete')}} 
+                                        </div>
+                                    @endif
+        
+                                    @if(Session::get('successUpdate'))
+                                        <div class="alert alert-success w-70">
+                                            {{Session::get('successUpdate')}} 
+                                        </div>
+                                    @endif
+        
+                                    @if(Session::get('operatorttd'))
+                                        <div class="alert alert-success w-70">
+                                            {{Session::get('operatorttd')}} 
+                                        </div>
+                                    @endif
+        
+                                    @if(Session::get('successAddSampel'))
+                                        <div class="alert alert-success w-70">
+                                            {{Session::get('successAddSampel')}} 
+                                        </div>
+                                    @endif
+        
+        
+        
+                            
+        
+                                    <div class="card-body mt-3 shadow">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-md">
+                                                <tr>
+                                                    <th scope="col" align="center" style=text-align:center;">No</th>
+                                                    <th scope="col" align="center" style="text-align:center;">Nama Parameter</th>
+                                                    <th scope="col" align="center" style="text-align:center;">Catatan (optional)</th>
+                                                    <th scope="col" align="center" style="text-align:center;">Action</th>
+                                                </tr>
+                                                <tr>
+                                                    @forelse ($parameters as $param)
+                                                        <tr>
+                                                            <th scope="row">{{ ++$no }}</th>
+                                                            <td>{{ $param->nama_parameter }}</td>
+                                                            <td>{{ $param->catatan }}</td>
+                                                            <td>
+                                                                <form action="{{route('parameterDestroy', $param['id'])}}" method="POST">
+                                                                    @csrf 
+                                                                    @method('DELETE') 
+                                                                    <button class="text-danger btn"><i class="fa-solid fa-trash"></i></button>
+        
+                                                                    <a class="fa-solid fa-pen-to-square text-success btn" href="{{route('editParameter', $param->id)}}"></a>
+                                                                </form> 
+                                                            </td>
+                                                        </tr>
+        
+                                                        @empty
+                                                        <tr>
+                                                            <td class="text-center h5" colspan="9">Not Found</td>
+                                                        </tr>
+                                                    @endforelse
+                                                </tr>
+                                              </table>
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </section>
             </div>
         </div>
     </div>
 
 
-    <div class="main-content" style="margin-top:-8%;">
-        <section class="section">
-            <div class="section-body">
-                <h2 class="section-title">Data Parameter Pengujian</h2>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card shadow">
-                    
-                            {{-- @if(Session::get('successAdd'))
-                                <div class="alert alert-success w-70">
-                                    {{Session::get('successAdd')}} 
-                                </div>
-                            @endif --}}
-
-                            @if(Session::get('successDelete'))
-                                <div class="alert alert-danger w-70">
-                                    {{Session::get('successDelete')}} 
-                                </div>
-                            @endif
-
-                            @if(Session::get('successUpdate'))
-                                <div class="alert alert-success w-70">
-                                    {{Session::get('successUpdate')}} 
-                                </div>
-                            @endif
-
-                            @if(Session::get('operatorttd'))
-                                <div class="alert alert-success w-70">
-                                    {{Session::get('operatorttd')}} 
-                                </div>
-                            @endif
-
-                            @if(Session::get('successAddSampel'))
-                                <div class="alert alert-success w-70">
-                                    {{Session::get('successAddSampel')}} 
-                                </div>
-                            @endif
-
-
-
-                    
-
-                            <div class="card-body mt-3 shadow">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-md">
-                                        <tr>
-                                            <th scope="col" align="center" style=text-align:center;">No</th>
-                                            <th scope="col" align="center" style="text-align:center;">Nama Parameter</th>
-                                            <th scope="col" align="center" style="text-align:center;">Catatan (optional)</th>
-                                            <th scope="col" align="center" style="text-align:center;">Action</th>
-                                        </tr>
-                                        <tr>
-                                            @forelse ($parameter as $parameter)
-                                                <tr id="{{ $parameter->id }}">
-                                                    <th scope="row">{{ ++$no }}</th>
-                                                    <td>{{ $parameter->nama_parameter }}</td>
-                                                    <td>{{ $parameter->catatan }}</td>
-                                                    <td>
-                                                        <form action="{{route('parameterDestroy', $parameter['id'])}}" method="POST">
-                                                            @csrf 
-                                                            @method('DELETE') 
-                                                            <button class="text-danger btn"><i class="fa-solid fa-trash"></i></button>
-
-                                                            <a class="fa-solid fa-pen-to-square text-success btn" href="{{route('editParameter', $parameter->id)}}"></a>
-                                                        </form> 
-                                                    </td>
-                                                </tr>
-
-                                                @empty
-                                                <tr>
-                                                    <td class="text-center h5" colspan="9">Not Found</td>
-                                                </tr>
-                                            @endforelse
-                                        </tr>
-                                      </table>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
 
 
 

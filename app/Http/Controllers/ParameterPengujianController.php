@@ -29,8 +29,8 @@ class ParameterPengujianController extends Controller
 
     public function add(Request $request)
     {
-        $parameter = Parameter_pengujian::all();
-        return view('parameter_pengujian.add', compact('parameter'))->with('no'); 
+        $parameters = Parameter_pengujian::all();
+        return view('parameter_pengujian.add', compact('parameters'))->with('no'); 
     }
     
     public function inputParameter(Request $request)
